@@ -10,12 +10,12 @@ The detail requirments are in the issues of the repository. Please go through al
 ## How to Submit
 **PLEASE FOLLOW THIS PROPERLY.**
 1. Create a branch in this repository with your two digit Student ID and Nickname. 
-  1. For example, Tanvir's branch should be 06-tanvir. Use all lowercase characters.
-  2. There is a hyphen in between your ID and name.
-  3. If your ID is one digit, use a leading zero.
+   1. For example, Tanvir's branch should be 06-tanvir. Use all lowercase characters.
+   2. There is a hyphen in between your ID and name.
+   3. If your ID is one digit, use a leading zero.
 2. Create a folder at the root of the repository that is exactly same as your branch name. Write everything in this folder only.
-  1. The folder should be in the same directory with the README.md file.
-  2. Do not mess up with anything outside this folder.
+   1. The folder should be in the same directory with the README.md file.
+   2. Do not mess up with anything outside this folder.
 3. Only commit and push in your branch.
 
 If you think you have done something wrong, please inform your course teacher immediately.
