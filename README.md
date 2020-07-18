@@ -22,17 +22,18 @@ If you think you have done something wrong, please inform your course teacher im
 
 ## Minimum requirements
 Without the followings, your assignment will be considered unsubmitted
-1. Minimum 16 commits to your repository. The more the better.
+1. Minimum 16 commits in your branch. The more the better.
 2. The commit messages describe what has been done in this.
-3. Complete the "level 1" tickets.
+3. Complete the tickets in _[Minimum](/../../issues?q=milestone:Minimum)_ milestone.
 4. Maintain the constraints mentioned here: [#2](/../../issues/2).
 5. Complying to this document.
 
-## Nice to have
+## Requirements for better performance
 The followings are considered "good" and will add some bonus to your submission. You may try some of these if cannot achieve all.
+1. Eventually complete _[Average](/../../issues?q=milestone:Average)_, _[Good](/../../issues?q=milestone:Good)_ and _[Excellent](/../../issues?q=milestone:Excellent)_ milestones.
 1. At least 64 commits. This is not much, if you commit right way.
-2. Tag your commit with a issue. Use this format for tagging: #issue-number. For example #512.
-3. There is a special issue ([#1](/../../issues/1)) for refactoring commits. Make sure you use this tag when refactoring.
+1. Tag your commit with a issue. Use this format for tagging: #issue-number. For example #512.
+1. There is a special issue ([#1](/../../issues/1)) for refactoring commits. Make sure you use this tag when refactoring.
 
 ## How to cummunicate
 1. If your query is related to an issue, comment below the issue.
