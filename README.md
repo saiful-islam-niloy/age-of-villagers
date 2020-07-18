@@ -34,9 +34,16 @@ Do the followings to do better that minimum. You may try some of these if cannot
 1. Complete _[Average](/../../issues?q=milestone:Average)_ milestone.
 1. Complete _[Good](/../../issues?q=milestone:Good)_ milestone.
 1. Complete _[Excellent](/../../issues?q=milestone:Excellent)_ milestone.
-1. At least 64 commits. This is not much, if you commit right way.
+1. More commits:
+   1. Average: 32
+   1. Good: 48
+   1. Excellent: 64
+1. Refactoring commits. These commits should be truely refactoring commits. You know what refactoring means.
+   1. Average: 8
+   1. Good: 12
+   1. Excellent: 24
 1. Tag your commit with a issue. Use this format for tagging: #issue-number. For example #512.
-1. There is a special issue ([#1](/../../issues/1)) for refactoring commits. Make sure you use this tag when refactoring.
+1. There is a special issue ([#1](/../../issues/1)) for refactoring commits. Make sure you use this tag when refactoring otherwise it will not be considered as refactoring.
 
 ## How to cummunicate
 1. If your query is related to an issue, comment below the issue.
