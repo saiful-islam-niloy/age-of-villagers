@@ -25,14 +25,19 @@ Without the followings, your assignment will be considered unsubmitted
 1. Minimum 16 commits to your repository. The more the better.
 2. The commit messages describe what has been done in this.
 3. Complete the "level 1" tickets.
-4. Maintain the constraints mentioned here: #2.
-5. Follow the instructions as mentioned in the section "How to Submit".
+4. Maintain the constraints mentioned here: [#2](/../../issues/2).
+5. Complying to this document.
 
 ## Nice to have
 The followings are considered "good" and will add some bonus to your submission. You may try some of these if cannot achieve all.
 1. At least 64 commits. This is not much, if you commit right way.
 2. Tag your commit with a issue. Use this format for tagging: #issue-number. For example #512.
-3. There is a special issue (#1) for refactoring commits. Make sure you use this tag when refactoring.
+3. There is a special issue ([#1](/../../issues/1)) for refactoring commits. Make sure you use this tag when refactoring.
+
+## How to cummunicate
+1. If your query is related to an issue, comment below the issue.
+1. If it is a general question, comment below the discussion issue: [#3](/../../issues/3)
+1. Please do not discuss any solution approach in the discussion threads. Only ask for clarification. If you think your query will disclose a solution approach, please contact your course teachers privately.
 
 ## Overview
 The game has a lot of features, of which you need to focus only on the village creation part. Therefore all the user stories are assumed to be of a _village editor_ user role.
@@ -40,4 +45,5 @@ The game has a lot of features, of which you need to focus only on the village c
 A village can have sevaral types of objects like: _house_, _tree_ and _water source_. There are also several nations available. Based on the nation, the objects may look different. For example, house of the Inuits can be an igloo, whereas house of the Bedouin can be a tent.
 
 ## Notes
-Some parts of the assignment may be changed later. If that happens, you will be notified about it.
+1. Some parts of the assignment may be changed later. If that happens, you will be notified about it.
+1. This is a design patterns assignment. That means code quality is very important. However, implementing the functionality comes first.
