@@ -1,4 +1,5 @@
 **!! This is draft !!**
+**More tickets are comming. This document may also change anytime until this message is removed**
 
 # Age of Villagers
 This repository is detail of a Design Patterns Assignment for SWE 17.  
