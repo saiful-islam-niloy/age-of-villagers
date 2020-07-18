@@ -30,7 +30,9 @@ Without the followings, your assignment will be considered unsubmitted
 
 ## Requirements for better performance
 Do the followings to do better that minimum. You may try some of these if cannot achieve all.
-1. Eventually complete _[Average](/../../issues?q=milestone:Average)_, _[Good](/../../issues?q=milestone:Good)_ and _[Excellent](/../../issues?q=milestone:Excellent)_ milestones.
+1. Complete _[Average](/../../issues?q=milestone:Average)_ milestone.
+1. Complete _[Good](/../../issues?q=milestone:Good)_ milestone.
+1. Complete _[Excellent](/../../issues?q=milestone:Excellent)_ milestone.
 1. At least 64 commits. This is not much, if you commit right way.
 1. Tag your commit with a issue. Use this format for tagging: #issue-number. For example #512.
 1. There is a special issue ([#1](/../../issues/1)) for refactoring commits. Make sure you use this tag when refactoring.
