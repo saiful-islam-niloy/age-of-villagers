@@ -20,5 +20,10 @@ The followings are considered "good" and will add some bonus to your submission.
 2. Tag your commit with a issue. Use this format for tagging: #issue-number. For example #512.
 3. There is a special issue (#1) for refactoring commits. Make sure you use this tag when refactoring.
 
+## Overview
+The game has a lot of features, of which you need to focus only on the village creation part. Therefore all the user stories are assumed to be of a _village editor_ user role.
+
+A village can have sevaral types of objects like: _house_, _tree_ and _water source_. There are also several nations available. Based on the nation, the objects may look different. For example, house of the Inuits can be an igloo, whereas house of the Bedouin can be a tent.
+
 ## Notes
 Some parts of the assignment may be changed later. If that happens, you will be notified about it.
