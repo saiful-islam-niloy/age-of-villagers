@@ -7,12 +7,26 @@ You need to build part of a game named _Age of Villagers (AoV)_. The game is abo
 
 The detail requirments are in the issues of the repository. Please go through all the 
 
+## How to Submit
+**PLEASE FOLLOW THIS PROPERLY.**
+1. Create a branch in this repository with your two digit Student ID and Nickname. 
+  1. For example, Tanvir's branch should be 06-tanvir. Use all lowercase characters.
+  2. There is a hyphen in between your ID and name.
+  3. If your ID is one digit, use a leading zero.
+2. Create a folder at the root of the repository that is exactly same as your branch name. Write everything in this folder only.
+  1. The folder should be in the same directory with the README.md file.
+  2. Do not mess up with anything outside this folder.
+3. Only commit and push in your branch.
+
+If you think you have done something wrong, please inform your course teacher immediately.
+
 ## Minimum requirements
 Without the followings, your assignment will be considered unsubmitted
 1. Minimum 16 commits to your repository. The more the better.
 2. The commit messages describe what has been done in this.
 3. Complete the "level 1" tickets.
 4. Maintain the constraints mentioned here: #2.
+5. Follow the instructions as mentioned in the section "How to Submit".
 
 ## Nice to have
 The followings are considered "good" and will add some bonus to your submission. You may try some of these if cannot achieve all.
