@@ -47,3 +47,4 @@ A village can have sevaral types of objects like: _house_, _tree_ and _water sou
 ## Notes
 1. Some parts of the assignment may be changed later. If that happens, you will be notified about it.
 1. This is a design patterns assignment. That means code quality is very important. However, implementing the functionality comes first.
+1. Implementing functionality that was not asked does NOT give you any extra credit. 
