@@ -48,6 +48,7 @@ Code Quality               This will be evaluated manually
 1. Please do not discuss any solution approach in the discussion threads. Only ask for clarification. If you think your query will disclose a solution approach, please contact your course teachers privately.
 
 ## Notes
-1. Some parts of the assignment may be changed later. If that happens, you will be notified about it.
+1. Some parts of the assignment may be changed later. Make sure you watch this repository so that you get notification of any changes. Specially, some more tickets will be added.
 1. This is a design patterns assignment. That means code quality is very important. However, implementing functionality comes first.
 1. Implement only what has been asked. Implementing anything outside requirements does not give you any extra credit. 
+
