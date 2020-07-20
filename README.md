@@ -1,16 +1,14 @@
-**!! This is draft !!**  
-**More tickets are coming. This document may also change anytime until this message is removed**
-
 # Age of Villagers
 This repository is the detail of a Design Patterns Assignment for SWE 17.  
 
-You need to build part of a game named _Age of Villagers (AoV)_. The game is about people from different parts of the world trying to build their villages.
+You need to build part of a game named _Age of Villagers (AoV)_. The game is about people from different parts of the world trying to build their villages. The game has a lot of features, of which you need to focus only on the village creation part. Therefore all the user stories are assumed to be of a _village editor_ user role.
 
-The detailed requirements are in the issues of the repository. Please go through all the 
+A village can have several types of objects like _house_, _tree_ and _water source_. There are also several nations available. Based on the nation, the objects may look different. For example, the house of the Inuits can be an igloo, whereas the house of the Bedouin can be a tent.
+
+The detailed requirements are in the issues of the repository. Please go through this document and all the issues carefully.
 
 ## How to Submit
-**PLEASE FOLLOW THIS PROPERLY.**
-PLEASE DO NOT FOLLOW THESE STEPS UNTIL THE DRAFT IS FINAL.
+**PLEASE FOLLOW THIS PROPERLY.**  
 1. Create a branch in this repository with your two-digit Student ID and Nickname. 
    1. For example, Tanvir's branch should be 06-tanvir. Use all lowercase characters.
    2. There is a hyphen in between your ID and name.
@@ -23,7 +21,6 @@ PLEASE DO NOT FOLLOW THESE STEPS UNTIL THE DRAFT IS FINAL.
 If you think you have done something wrong, please inform your course teacher immediately.
 
 ## Performance Criteria
-
 ```
                            Minimum    Average      Good Excellent
 Total Commits                   16         32        48        64
@@ -45,17 +42,12 @@ Code Quality               This will be evaluated manually
    1. [Good](/../../issues?q=milestone:Good)
    1. [Excellent](/../../issues?q=milestone:Excellent)
 
-## How to communicate
+## How to Communicate
 1. If your query is related to an issue, comment below the issue.
 1. If it is a general question, comment below the discussion issue: [#3](/../../issues/3)
 1. Please do not discuss any solution approach in the discussion threads. Only ask for clarification. If you think your query will disclose a solution approach, please contact your course teachers privately.
 
-## Overview
-The game has a lot of features, of which you need to focus only on the village creation part. Therefore all the user stories are assumed to be of a _village editor_ user role.
-
-A village can have several types of objects like _house_, _tree_ and _water source_. There are also several nations available. Based on the nation, the objects may look different. For example, the house of the Inuits can be an igloo, whereas the house of the Bedouin can be a tent.
-
 ## Notes
 1. Some parts of the assignment may be changed later. If that happens, you will be notified about it.
 1. This is a design patterns assignment. That means code quality is very important. However, implementing functionality comes first.
-1. Implementing functionality that was not asked does NOT give you any extra credit. 
+1. Implement only what has been asked. Implementing anything outside requirements does not give you any extra credit. 
