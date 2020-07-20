@@ -15,36 +15,35 @@ PLEASE DO NOT FOLLOW THESE STEPS UNTIL THE DRAFT IS FINAL.
    1. For example, Tanvir's branch should be 06-tanvir. Use all lowercase characters.
    2. There is a hyphen in between your ID and name.
    3. If your ID is one digit, use a leading zero.
-2. Create a folder at the root of the repository that is exactly same as your branch name. Write everything in this folder only.
-   1. The folder should be in the same directory with the README.md file.
-   2. Do not mess up with anything outside this folder.
+2. Create a folder in the `solutions` folder with the exact same as your branch name. Write everything in this folder only.
+   1. There is a `.keep` file in the solution folder. Do not do anything with this.
+   2. Do not mess up with anything outside your folder.
 3. Only commit and push in your branch.
 
 If you think you have done something wrong, please inform your course teacher immediately.
 
-## Minimum requirements
-Without the followings, your assignment will be considered unsubmitted
-1. Minimum 16 commits in your branch. The more the better.
-2. The commit messages describe what has been done in this.
-3. Complete the tickets in _[Minimum](/../../issues?q=milestone:Minimum)_ milestone.
-4. Maintain the constraints mentioned here: [#2](/../../issues/2).
-5. Complying to this document.
+## Performance Criteria
 
-## Requirements for better performance
-Do the followings to do better that minimum. You may try some of these if cannot achieve all.
-1. Complete _[Average](/../../issues?q=milestone:Average)_ milestone.
-1. Complete _[Good](/../../issues?q=milestone:Good)_ milestone.
-1. Complete _[Excellent](/../../issues?q=milestone:Excellent)_ milestone.
-1. More commits:
-   1. Average: 32
-   1. Good: 48
-   1. Excellent: 64
-1. Refactoring commits. These commits should be truely refactoring commits. You know what refactoring means.
-   1. Average: 8
-   1. Good: 12
-   1. Excellent: 24
-1. Tag your commit with a issue. Use this format for tagging: #issue-number. For example #512.
-1. There is a special issue ([#1](/../../issues/1)) for refactoring commits. Make sure you use this tag when refactoring otherwise it will not be considered as refactoring.
+```
+                           Minimum    Average      Good Excellent
+Total Commits                   16         32        48        64
+Refactoring Commits              0          8        12        24
+Tagging Commits                13%        25%       50%       75%
+Unit Test Coverage              3%        13%       25%       50%  
+Maintaining Constraints        ALL          -         -         -
+Feature Completion         As per the milestones in GitHub
+Code Quality               This will be evaluated manually
+```
+
+1. The _Minimum_ criteria must be fulfilled in order to consider your assignment to be submitted.
+1. **Constraints**: Documented here: [#2](/../../issues/2).
+1. **Tagging Commits**: Use this format to tag your commits with an issue: #issue-number. For example #512.
+1. **Tagging Refactoring Commits**: There is a special issue ([#1](/../../issues/1)) for refactoring commits. Make sure you use this tag when refactoring. Otherwise it will not be considered as refactoring.
+1. **Milestones**: The tasks are associated with milestones. Find the issues with milestones here:
+   1. [Minimum](/../../issues?q=milestone:Minimum)
+   1. [Average](/../../issues?q=milestone:Average)
+   1. [Good](/../../issues?q=milestone:Good)
+   1. [Excellent](/../../issues?q=milestone:Excellent)
 
 ## How to cummunicate
 1. If your query is related to an issue, comment below the issue.
