@@ -17,7 +17,7 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <RadioButton fx:id="tree" layoutX="32.0" layoutY="150.0" mnemonicParsing="false" onAction="#selectTree" text="Tree" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="150.0" />
+                        <RadioButton fx:id="tree" layoutX="32.0" layoutY="150.0" mnemonicParsing="false" onAction="#selectTree" text="Tree" />
                         <RadioButton fx:id="house" layoutX="31.0" layoutY="181.0" mnemonicParsing="false" onAction="#selectHouse" text="House" />
                         <RadioButton fx:id="waterSource" layoutX="32.0" layoutY="211.0" mnemonicParsing="false" onAction="#selectWaterSource" text="Water Source" />
                         <Button fx:id="saveVillage" layoutX="40.0" layoutY="349.0" mnemonicParsing="false" onAction="#saveVillage" text="Save Village" />
