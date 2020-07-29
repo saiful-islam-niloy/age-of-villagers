@@ -8,6 +8,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import utility.ReadFile;
 import utility.SaveFile;
 
 import java.io.File;
@@ -74,8 +75,9 @@ public class Controller {
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Age of Villagers files (*.aov)", "*.aov");
         fileChooser.getExtensionFilters().add(extFilter);
 
-
-        fileChooser.showOpenDialog(null);
+        File file = fileChooser.showOpenDialog(null);
+        ReadFile readFile = new ReadFile(file);
+        villageName.setText(readFile.getText());
     }
 
     @FXML

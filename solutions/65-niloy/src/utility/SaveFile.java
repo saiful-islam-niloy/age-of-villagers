@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class SaveFile {
-    String content;
-    File file;
+    private String content;
+    private File file;
 
     public SaveFile(String content, File file) {
         this.content = content;
