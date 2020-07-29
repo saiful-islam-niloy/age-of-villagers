@@ -7,7 +7,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+import utility.SaveFile;
 
+import java.io.File;
 
 
 public class Controller {
@@ -56,6 +59,7 @@ public class Controller {
         villageName.setText(inputVillageName.getText());
         nationName.setText(inputNationName.getText());
         infoLayout.setVisible(false);
+        drawingSpace.setStyle("-fx-background-color: #cfffe2");
     }
 
     @FXML
@@ -69,7 +73,18 @@ public class Controller {
 
     @FXML
     void saveVillage(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
 
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Age of Villagers files (*.aov)", "*.aov");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        File file = fileChooser.showSaveDialog(null);
+
+
+        if (file != null) {
+            SaveFile saveFile = new SaveFile(villageName.getText(), file);
+            saveFile.saveFile();
+        }
     }
 
     @FXML
