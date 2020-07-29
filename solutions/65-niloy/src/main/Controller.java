@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import state.CurrentState;
 import utility.ReadFile;
 import utility.SaveFile;
 
@@ -57,10 +58,13 @@ public class Controller {
     @FXML
     private Label nationName;
 
+    private CurrentState currentState = CurrentState.getInstance();
+
     @FXML
     void createVillage(ActionEvent event) {
         villageName.setText(inputVillageName.getText());
         nationName.setText(inputNationName.getValue());
+        currentState.setVillageName(inputVillageName.getText());
         infoLayout.setVisible(false);
         drawingSpace.setStyle("-fx-background-color: #cfffe2");
     }
