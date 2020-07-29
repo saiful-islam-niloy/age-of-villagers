@@ -69,6 +69,13 @@ public class Controller {
 
     @FXML
     void openVillage(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Age of Villagers files (*.aov)", "*.aov");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+
+        fileChooser.showOpenDialog(null);
     }
 
     @FXML
