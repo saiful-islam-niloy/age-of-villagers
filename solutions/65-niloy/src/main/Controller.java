@@ -1,11 +1,10 @@
 package main;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import utility.ReadFile;
@@ -43,7 +42,10 @@ public class Controller {
     private TextField inputVillageName;
 
     @FXML
-    private TextField inputNationName;
+    private ComboBox<String> inputNationName;
+
+    private String nation[] =
+            { "Bangladeshi Farmer's"};
 
     @FXML
     private Button createVillage;
@@ -58,13 +60,14 @@ public class Controller {
     @FXML
     void createVillage(ActionEvent event) {
         villageName.setText(inputVillageName.getText());
-        nationName.setText(inputNationName.getText());
+        nationName.setText(inputNationName.getValue());
         infoLayout.setVisible(false);
         drawingSpace.setStyle("-fx-background-color: #cfffe2");
     }
 
     @FXML
     void newVillage(ActionEvent event) {
+        inputNationName.setItems(FXCollections.observableArrayList(nation));
         infoLayout.setVisible(true);
     }
 
