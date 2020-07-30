@@ -1,29 +1,32 @@
 package utility;
 
-import java.io.BufferedReader;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 
 public class ReadFile {
     private File file;
+    private JsonObject jsonObject;
 
     public ReadFile(File file) {
         this.file = file;
+        loadJson();
     }
 
-    public String getText(){
-        String output = "";
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String line;
-            while ((line = reader.readLine()) != null){
-                output += line;
-                System.out.println(output);
-            }
-        } catch (IOException e) {
+    private void loadJson(){
+        JsonParser parser = new JsonParser();
+
+        try {
+            Object obj = parser.parse(new FileReader(file));
+            jsonObject = (JsonObject) obj;
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("2: "+output);
-        return output;
+    }
+
+    public String getVillageName(){
+       return jsonObject.get("villageName").getAsString();
     }
 }

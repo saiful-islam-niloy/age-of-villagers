@@ -84,7 +84,7 @@ public class Controller {
 
         File file = fileChooser.showOpenDialog(null);
         ReadFile readFile = new ReadFile(file);
-        villageName.setText(readFile.getText());
+        villageName.setText(readFile.getVillageName());
     }
 
     @FXML
