@@ -20,4 +20,8 @@ public class CurrentState {
         state.addProperty("villageName", village);
         System.out.println(state);
     }
+
+    public JsonObject getCurrentStateObject(){
+        return state;
+    }
 }

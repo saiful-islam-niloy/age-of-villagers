@@ -98,7 +98,7 @@ public class Controller {
 
 
         if (file != null) {
-            SaveFile saveFile = new SaveFile(villageName.getText(), file);
+            SaveFile saveFile = new SaveFile(file);
             saveFile.saveFile();
         }
     }
