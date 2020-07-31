@@ -1,11 +1,18 @@
 package main;
 
+import canvas.CanvasHelper;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import state.CurrentState;
 import utility.ReadFile;
@@ -115,6 +122,9 @@ public class Controller {
 
     @FXML
     void selectWaterSource(ActionEvent event) {
-
+        Canvas canvas = new Canvas(600, 400);
+        drawingSpace.getChildren().add(canvas);
+        CanvasHelper canvasHelper = new CanvasHelper(canvas);
+        canvasHelper.execute();
     }
 }

@@ -1,6 +1,5 @@
 package utility;
 
-import com.sun.javafx.logging.PlatformLogger;
 import state.CurrentState;
 
 import java.io.File;
