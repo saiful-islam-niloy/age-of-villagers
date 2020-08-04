@@ -2,12 +2,12 @@ package canvas;
 
 import javafx.event.EventHandler;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.MouseEvent;;;;
 import javafx.scene.shape.ArcType;
 
 public class CanvasHelper {
     private javafx.scene.canvas.Canvas canvas;
-    private int i = 1;
+    private int i = 15;
 
     public CanvasHelper(javafx.scene.canvas.Canvas canvas) {
         this.canvas = canvas;
@@ -20,9 +20,8 @@ public class CanvasHelper {
 
                     @Override
                     public void handle(MouseEvent event) {
-                        graphicsContext.fillArc(10*i,20*i,30*i,40*i,50*i,60*i, ArcType.ROUND);
-                        i ++;
-                        graphicsContext.setLineWidth(1);
+                        graphicsContext.strokeLine(event.getX(), event.getY(), 10, 10);
+
                         String x = String.valueOf(event.getX());
                         String y = String.valueOf(event.getY());
                         System.out.println(x+", "+y);
