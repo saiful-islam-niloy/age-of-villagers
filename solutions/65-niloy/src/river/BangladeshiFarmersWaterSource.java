@@ -34,7 +34,7 @@ public class BangladeshiFarmersWaterSource implements IWaterSource{
         four = new Point(selectedPoint.x - 2, selectedPoint.y + 1);
         five = new Point(selectedPoint.x + 4, selectedPoint.y + 8);
         six = new Point(selectedPoint.x + 12, selectedPoint.y + 4);
-        seven = new Point(selectedPoint.x - 7, selectedPoint.y +-8);
+        seven = new Point(selectedPoint.x + 7, selectedPoint.y - 8);
         eight = new Point(selectedPoint.x + 2, selectedPoint.y - 2);
         nine = new Point(selectedPoint.x - 4, selectedPoint.y - 8);
     }

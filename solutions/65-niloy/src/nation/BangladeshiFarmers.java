@@ -2,6 +2,8 @@ package nation;
 
 import house.BangladeshiFarmersHouse;
 import house.IHouse;
+import river.BangladeshiFarmersWaterSource;
+import river.IWaterSource;
 import tree.BangladeshiFarmersTree;
 import tree.ITree;
 
@@ -22,7 +24,7 @@ public class BangladeshiFarmers implements INation {
     }
 
     @Override
-    public void drawRiver() {
-
+    public IWaterSource getWaterSource() {
+        return new BangladeshiFarmersWaterSource();
     }
 }

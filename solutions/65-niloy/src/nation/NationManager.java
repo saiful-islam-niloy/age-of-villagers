@@ -1,6 +1,7 @@
 package nation;
 
 import house.IHouse;
+import river.IWaterSource;
 import tree.ITree;
 
 public class NationManager {
@@ -28,5 +29,9 @@ public class NationManager {
 
     public ITree getTree(){
         return (ITree) nation.getTree();
+    }
+
+    public IWaterSource getWaterSource(){
+        return (IWaterSource) nation.getWaterSource();
     }
 }

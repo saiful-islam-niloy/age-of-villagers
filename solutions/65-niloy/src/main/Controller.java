@@ -19,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import nation.BangladeshiFarmers;
 import nation.NationManager;
+import river.IWaterSource;
 import shape.House;
 import shape.Tree;
 import shape.WaterSource;
@@ -80,6 +81,7 @@ public class Controller {
     private NationManager nationManager;
     private ITree iTree;
     private IHouse iHouse;
+    private IWaterSource iWaterSource;
 
 
     @FXML
@@ -162,9 +164,12 @@ public class Controller {
 
     @FXML
     void selectWaterSource(ActionEvent event) {
-        Canvas canvas = new Canvas(600, 400);
-        drawingSpace.getChildren().add(canvas);
-        WaterSource waterSource = new WaterSource(canvas);
-        waterSource.draw();
+        if(waterSource.isSelected()){
+            iWaterSource = nationManager.getWaterSource();
+            iWaterSource.getCanvas();
+            iWaterSource.draw();
+        }else{
+            iWaterSource.releaseCanvas();
+        }
     }
 }
