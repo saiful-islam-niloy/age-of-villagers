@@ -3,7 +3,7 @@ package nation;
 public class BangladeshiFarmers implements INation{
     @Override
     public void drawTerrain() {
-        
+
     }
 
     @Override
