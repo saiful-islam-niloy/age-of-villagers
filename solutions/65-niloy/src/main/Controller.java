@@ -15,6 +15,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import shape.House;
+import shape.Tree;
 import state.CurrentState;
 import utility.ReadFile;
 import utility.SaveFile;
@@ -67,6 +68,7 @@ public class Controller {
     private Label nationName;
 
     private CurrentState currentState = CurrentState.getInstance();
+
 
     @FXML
     void createVillage(ActionEvent event) {
@@ -121,7 +123,10 @@ public class Controller {
 
     @FXML
     void selectTree(ActionEvent event) {
-
+        Canvas canvas = new Canvas(600, 400);
+        drawingSpace.getChildren().add(canvas);
+        Tree tree = new Tree(canvas);
+        tree.draw();
     }
 
     @FXML
