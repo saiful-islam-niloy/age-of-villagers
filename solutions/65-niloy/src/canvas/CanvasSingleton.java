@@ -19,4 +19,9 @@ public class CanvasSingleton {
     public Canvas getCanvas(){
         return canvas;
     }
+
+    public Canvas renewCanvas(){
+        instance = new CanvasSingleton();
+        return instance.getCanvas();
+    }
 }

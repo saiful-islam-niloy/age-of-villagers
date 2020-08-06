@@ -23,6 +23,7 @@ import shape.House;
 import shape.Tree;
 import shape.WaterSource;
 import state.CurrentState;
+import tree.ITree;
 import utility.ReadFile;
 import utility.SaveFile;
 
@@ -77,6 +78,7 @@ public class Controller {
 
     private Canvas canvas;
     private NationManager nationManager;
+    private ITree iTree;
 
 
     @FXML
@@ -88,18 +90,20 @@ public class Controller {
         initialize();
     }
 
-    @FXML
-    void newVillage(ActionEvent event) {
-        inputNationName.setItems(FXCollections.observableArrayList(nation));
-        infoLayout.setVisible(true);
-    }
-
     private void initialize() {
         CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
         canvas = canvasSingleton.getCanvas();
         drawingSpace.getChildren().add(canvas);
 
         nationManager = new NationManager(inputNationName.getValue());
+        iTree = nationManager.getTree();
+    }
+
+
+    @FXML
+    void newVillage(ActionEvent event) {
+        inputNationName.setItems(FXCollections.observableArrayList(nation));
+        infoLayout.setVisible(true);
     }
 
     @FXML
@@ -132,13 +136,25 @@ public class Controller {
 
     @FXML
     void selectHouse(ActionEvent event) {
-        nationManager.getHouse().draw();
+        if(house.isSelected()){
+            nationManager.getHouse().draw();
+            System.out.println("House Selected");
+        }
     }
 
     @FXML
     void selectTree(ActionEvent event) {
-        nationManager.getTree().draw();
+        if(tree.isSelected()){
+            iTree = nationManager.getTree();
+            iTree.getCanvas();
+            iTree.draw();
+            System.out.println("tree selected");
+        }else{
+            iTree.releaseCanvas();
+            System.out.println("tree unchecked");
+        }
     }
+
 
     @FXML
     void selectWaterSource(ActionEvent event) {
