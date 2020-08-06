@@ -16,6 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import shape.House;
 import shape.Tree;
+import shape.WaterSource;
 import state.CurrentState;
 import utility.ReadFile;
 import utility.SaveFile;
@@ -133,7 +134,7 @@ public class Controller {
     void selectWaterSource(ActionEvent event) {
         Canvas canvas = new Canvas(600, 400);
         drawingSpace.getChildren().add(canvas);
-        CanvasHelper canvasHelper = new CanvasHelper(canvas);
-        canvasHelper.execute();
+        WaterSource waterSource = new WaterSource(canvas);
+        waterSource.draw();
     }
 }
