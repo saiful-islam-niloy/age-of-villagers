@@ -1,29 +1,18 @@
 package main;
 
-import canvas.CanvasHelper;
 import canvas.CanvasSingleton;
-import house.BangladeshiFarmersHouse;
 import house.IHouse;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
-import nation.BangladeshiFarmers;
 import nation.NationManager;
 import river.IWaterSource;
-import shape.House;
-import shape.Tree;
-import shape.WaterSource;
 import state.CurrentState;
+import terrain.ITerrain;
 import tree.ITree;
 import utility.ReadFile;
 import utility.SaveFile;
@@ -82,6 +71,7 @@ public class Controller {
     private ITree iTree;
     private IHouse iHouse;
     private IWaterSource iWaterSource;
+    private ITerrain iTerrain;
 
 
     @FXML
@@ -99,6 +89,8 @@ public class Controller {
         drawingSpace.getChildren().add(canvas);
 
         nationManager = new NationManager(inputNationName.getValue());
+        iTerrain = nationManager.getTerrain();
+        iTerrain.draw();
     }
 
 

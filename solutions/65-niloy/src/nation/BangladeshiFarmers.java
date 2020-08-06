@@ -4,15 +4,12 @@ import house.BangladeshiFarmersHouse;
 import house.IHouse;
 import river.BangladeshiFarmersWaterSource;
 import river.IWaterSource;
+import terrain.BangladeshiFarmerTerrain;
+import terrain.ITerrain;
 import tree.BangladeshiFarmersTree;
 import tree.ITree;
 
 public class BangladeshiFarmers implements INation {
-    @Override
-    public void drawTerrain() {
-
-    }
-
     @Override
     public IHouse getHouse() {
         return new BangladeshiFarmersHouse();
@@ -26,5 +23,10 @@ public class BangladeshiFarmers implements INation {
     @Override
     public IWaterSource getWaterSource() {
         return new BangladeshiFarmersWaterSource();
+    }
+
+    @Override
+    public ITerrain getTerrain() {
+        return new BangladeshiFarmerTerrain();
     }
 }
