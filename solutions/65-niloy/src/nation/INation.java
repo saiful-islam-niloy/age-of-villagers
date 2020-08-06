@@ -1,8 +1,10 @@
 package nation;
 
+import house.IHouse;
+
 public interface INation {
     void drawTerrain();
-    void drawHouse();
+    IHouse getHouse();
     void drawTree();
     void drawRiver();
 }

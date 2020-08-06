@@ -1,6 +1,9 @@
 package main;
 
 import canvas.CanvasHelper;
+import canvas.CanvasSingleton;
+import house.BangladeshiFarmersHouse;
+import house.IHouse;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,6 +17,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import nation.BangladeshiFarmers;
+import nation.NationManager;
 import shape.House;
 import shape.Tree;
 import shape.WaterSource;
@@ -56,7 +61,7 @@ public class Controller {
     private ComboBox<String> inputNationName;
 
     private String nation[] =
-            { "Bangladeshi Farmer's"};
+            { "Bangladeshi Farmers"};
 
     @FXML
     private Button createVillage;
@@ -70,6 +75,9 @@ public class Controller {
 
     private CurrentState currentState = CurrentState.getInstance();
 
+    private Canvas canvas;
+    private NationManager nationManager;
+
 
     @FXML
     void createVillage(ActionEvent event) {
@@ -77,13 +85,21 @@ public class Controller {
         nationName.setText(inputNationName.getValue());
         currentState.setVillageName(inputVillageName.getText());
         infoLayout.setVisible(false);
-        drawingSpace.setStyle("-fx-background-color: #cfffe2");
+        initialize();
     }
 
     @FXML
     void newVillage(ActionEvent event) {
         inputNationName.setItems(FXCollections.observableArrayList(nation));
         infoLayout.setVisible(true);
+    }
+
+    private void initialize() {
+        CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
+        canvas = canvasSingleton.getCanvas();
+        drawingSpace.getChildren().add(canvas);
+
+        nationManager = new NationManager(inputNationName.getValue());
     }
 
     @FXML
@@ -116,10 +132,7 @@ public class Controller {
 
     @FXML
     void selectHouse(ActionEvent event) {
-        Canvas canvas = new Canvas(600, 400);
-        drawingSpace.getChildren().add(canvas);
-        House house = new House(canvas);
-        house.draw();
+        nationManager.getHouse().draw();
     }
 
     @FXML

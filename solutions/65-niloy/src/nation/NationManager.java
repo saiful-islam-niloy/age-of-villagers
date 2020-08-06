@@ -1,18 +1,26 @@
 package nation;
 
+import house.IHouse;
+
 public class NationManager {
     private String nationType;
+    private INation nation;
+    private NationFactory nationFactory;
 
     public NationManager(String nationType) {
         this.nationType = nationType;
+        nationFactory = new NationFactory();
+        nation = nationFactory.getNation(nationType);
     }
 
     public void draw(){
-        NationFactory nationFactory = new NationFactory();
-        INation nation = nationFactory.getNation(nationType);
-        nation.drawTerrain();
-        nation.drawHouse();
-        nation.drawTree();
-        nation.drawRiver();
+//        nation.drawTerrain();
+        nation.getHouse().draw();
+//        nation.drawTree();
+//        nation.drawRiver();
+    }
+
+    public IHouse getHouse(){
+        return (IHouse)nation.getHouse();
     }
 }
