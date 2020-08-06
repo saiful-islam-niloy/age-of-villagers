@@ -8,6 +8,6 @@ public class NationManager {
     }
 
     public void draw(){
-        
+
     }
 }
