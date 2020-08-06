@@ -1,2 +1,5 @@
-package shape;public interface Shape {
+package shape;
+
+public interface Shape {
+    void draw();
 }

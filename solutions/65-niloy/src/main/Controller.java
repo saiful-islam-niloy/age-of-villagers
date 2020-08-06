@@ -14,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import shape.House;
 import state.CurrentState;
 import utility.ReadFile;
 import utility.SaveFile;
@@ -112,7 +113,10 @@ public class Controller {
 
     @FXML
     void selectHouse(ActionEvent event) {
-
+        Canvas canvas = new Canvas(600, 400);
+        drawingSpace.getChildren().add(canvas);
+        House house = new House(canvas);
+        house.draw();
     }
 
     @FXML
