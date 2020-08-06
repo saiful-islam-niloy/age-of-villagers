@@ -1,6 +1,7 @@
 package nation;
 
 import house.IHouse;
+import tree.ITree;
 
 public class NationManager {
     private String nationType;
@@ -22,5 +23,10 @@ public class NationManager {
 
     public IHouse getHouse(){
         return (IHouse)nation.getHouse();
+    }
+
+
+    public ITree getTree(){
+        return (ITree) nation.getTree();
     }
 }

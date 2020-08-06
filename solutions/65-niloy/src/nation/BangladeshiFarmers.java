@@ -2,10 +2,10 @@ package nation;
 
 import house.BangladeshiFarmersHouse;
 import house.IHouse;
-import terrain.BangladeshiFarmerTerrain;
-import terrain.ITerrain;
+import tree.BangladeshiFarmersTree;
+import tree.ITree;
 
-public class BangladeshiFarmers implements INation{
+public class BangladeshiFarmers implements INation {
     @Override
     public void drawTerrain() {
 
@@ -17,8 +17,8 @@ public class BangladeshiFarmers implements INation{
     }
 
     @Override
-    public void drawTree() {
-
+    public ITree getTree() {
+        return new BangladeshiFarmersTree();
     }
 
     @Override

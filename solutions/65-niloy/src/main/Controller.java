@@ -137,10 +137,7 @@ public class Controller {
 
     @FXML
     void selectTree(ActionEvent event) {
-        Canvas canvas = new Canvas(600, 400);
-        drawingSpace.getChildren().add(canvas);
-        Tree tree = new Tree(canvas);
-        tree.draw();
+        nationManager.getTree().draw();
     }
 
     @FXML
