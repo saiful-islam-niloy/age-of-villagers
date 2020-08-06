@@ -1,6 +1,6 @@
-package tree;
+package river;
 
-public interface ITree {
+public interface IWaterSource {
     void draw();
     void releaseCanvas();
     void getCanvas();
