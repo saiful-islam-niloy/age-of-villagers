@@ -79,6 +79,7 @@ public class Controller {
     private Canvas canvas;
     private NationManager nationManager;
     private ITree iTree;
+    private IHouse iHouse;
 
 
     @FXML
@@ -96,7 +97,6 @@ public class Controller {
         drawingSpace.getChildren().add(canvas);
 
         nationManager = new NationManager(inputNationName.getValue());
-        iTree = nationManager.getTree();
     }
 
 
@@ -137,8 +137,12 @@ public class Controller {
     @FXML
     void selectHouse(ActionEvent event) {
         if(house.isSelected()){
-            nationManager.getHouse().draw();
+            iHouse = nationManager.getHouse();
+            iHouse.getCanvas();
+            iHouse.draw();
             System.out.println("House Selected");
+        }else {
+            iHouse.releaseCanvas();
         }
     }
 

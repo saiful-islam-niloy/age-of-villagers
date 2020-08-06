@@ -7,7 +7,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import shape.Point;
 
-public class BangladeshiFarmersHouse implements IHouse{
+public class BangladeshiFarmersHouse implements IHouse {
     private Canvas canvas;
 
     private Point one;
@@ -16,17 +16,19 @@ public class BangladeshiFarmersHouse implements IHouse{
     private Point four;
     private Point five;
 
+    private boolean shouldBeDrawn = true;
+
     public BangladeshiFarmersHouse() {
         CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
         this.canvas = canvasSingleton.getCanvas();
     }
 
-    private void calculateCornerPoints(Point selectedPoint){
-        one = new Point(selectedPoint.x, selectedPoint.y-8);
-        two = new Point(selectedPoint.x-8, selectedPoint.y-2);
-        three = new Point(selectedPoint.x-8, selectedPoint.y+8);
-        four = new Point(selectedPoint.x+8, selectedPoint.y+8);
-        five = new Point(selectedPoint.x+8, selectedPoint.y-2);
+    private void calculateCornerPoints(Point selectedPoint) {
+        one = new Point(selectedPoint.x, selectedPoint.y - 8);
+        two = new Point(selectedPoint.x - 8, selectedPoint.y - 2);
+        three = new Point(selectedPoint.x - 8, selectedPoint.y + 8);
+        four = new Point(selectedPoint.x + 8, selectedPoint.y + 8);
+        five = new Point(selectedPoint.x + 8, selectedPoint.y - 2);
     }
 
     @Override
@@ -34,19 +36,31 @@ public class BangladeshiFarmersHouse implements IHouse{
         final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
-                new EventHandler<MouseEvent>(){
+                new EventHandler<MouseEvent>() {
 
                     @Override
                     public void handle(MouseEvent event) {
-                        calculateCornerPoints(new Point((int)event.getX(), (int)event.getY()));
+                        if (shouldBeDrawn) {
+                            calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                        graphicsContext.strokeLine(one.x, one.y, two.x, two.y);
-                        graphicsContext.strokeLine(two.x, two.y, three.x, three.y);
-                        graphicsContext.strokeLine(three.x, three.y, four.x, four.y);
-                        graphicsContext.strokeLine(four.x, four.y, five.x, five.y);
-                        graphicsContext.strokeLine(five.x, five.y, one.x, one.y);
-                        graphicsContext.strokeLine(two.x, two.y, five.x, five.y);
+                            graphicsContext.strokeLine(one.x, one.y, two.x, two.y);
+                            graphicsContext.strokeLine(two.x, two.y, three.x, three.y);
+                            graphicsContext.strokeLine(three.x, three.y, four.x, four.y);
+                            graphicsContext.strokeLine(four.x, four.y, five.x, five.y);
+                            graphicsContext.strokeLine(five.x, five.y, one.x, one.y);
+                            graphicsContext.strokeLine(two.x, two.y, five.x, five.y);
+                        }
                     }
                 });
+    }
+
+    @Override
+    public void releaseCanvas() {
+        shouldBeDrawn = false;
+    }
+
+    @Override
+    public void getCanvas() {
+        shouldBeDrawn = true;
     }
 }
