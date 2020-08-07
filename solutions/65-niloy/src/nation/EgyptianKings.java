@@ -5,6 +5,7 @@ import river.EgyptianKingsWaterSource;
 import river.IWaterSource;
 import terrain.EgyptianKingsTerrain;
 import terrain.ITerrain;
+import tree.EgyptianKingsTree;
 import tree.ITree;
 
 public class EgyptianKings implements INation{
@@ -20,7 +21,7 @@ public class EgyptianKings implements INation{
 
     @Override
     public ITree getTree() {
-        return null;
+        return new EgyptianKingsTree();
     }
 
     @Override

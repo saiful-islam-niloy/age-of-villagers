@@ -32,13 +32,13 @@ public class EgyptianKingsTree implements ITree{
         two = new Point(selectedPoint.x - 6, selectedPoint.y );
         three = new Point(selectedPoint.x + 6, selectedPoint.y );
 
-        four = new Point(selectedPoint.x - 12, selectedPoint.y - 4);
-        five = new Point(selectedPoint.x - 12, selectedPoint.y - 4);
-        six = new Point(selectedPoint.x - 2, selectedPoint.y - 16);
+        four = new Point(selectedPoint.x - 12, selectedPoint.y );
+        five = new Point(selectedPoint.x - 7, selectedPoint.y -4);
+        six = new Point(selectedPoint.x - 2, selectedPoint.y - 4);
 
         seven = new Point(selectedPoint.x + 2, selectedPoint.y - 4);
-        eight = new Point(selectedPoint.x + 12, selectedPoint.y - 4);
-        nine = new Point(selectedPoint.x + 12, selectedPoint.y - 16);
+        eight = new Point(selectedPoint.x + 7, selectedPoint.y - 4);
+        nine = new Point(selectedPoint.x + 12, selectedPoint.y );
     }
 
     @Override
@@ -54,8 +54,7 @@ public class EgyptianKingsTree implements ITree{
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
                             graphicsContext.strokeLine(one.x, one.y, two.x, two.y);
-                            graphicsContext.strokeLine(two.x, two.y, three.x, three.y);
-                            graphicsContext.strokeLine(three.x, three.y, four.x, four.y);
+                            graphicsContext.strokeLine(one.x, one.y, three.x, three.y);
 
                             graphicsContext.strokeLine(two.x, two.y, four.x, four.y);
                             graphicsContext.strokeLine(two.x, two.y, five.x, five.y);
