@@ -1,6 +1,7 @@
 package nation;
 
 import house.IHouse;
+import house.InuitHuntersHouse;
 import river.IWaterSource;
 import terrain.ITerrain;
 import terrain.InuitHuntersTerrain;
@@ -14,7 +15,7 @@ public class InuitHunters implements INation{
 
     @Override
     public IHouse getHouse() {
-        return null;
+        return new InuitHuntersHouse();
     }
 
     @Override

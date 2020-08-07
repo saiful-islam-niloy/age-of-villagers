@@ -13,9 +13,8 @@ public class InuitHuntersHouse implements IHouse {
     private Canvas canvas;
     private boolean shouldBeDrawn = true;
 
-    private Point one;
-    private Point two;
     private Point center;
+    private Point center2;
 
 
     public InuitHuntersHouse() {
@@ -24,9 +23,8 @@ public class InuitHuntersHouse implements IHouse {
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
-        one = new Point(selectedPoint.x - 4, selectedPoint.y - 8);
-        two = new Point(selectedPoint.x - 12, selectedPoint.y + 8);
-        center = new Point(selectedPoint.x , selectedPoint.y + 8);
+        center = new Point(selectedPoint.x -12, selectedPoint.y );
+        center2 = new Point(selectedPoint.x -4, selectedPoint.y +8);
     }
 
     @Override
@@ -41,9 +39,8 @@ public class InuitHuntersHouse implements IHouse {
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            graphicsContext.strokeLine(one.x, one.y, two.x, two.y);
-                            graphicsContext.strokeArc(center.x, center.y, 12, 12, 0, 180, ArcType.OPEN);
-                            graphicsContext.strokeArc(center.x, center.y, 24, 24, 0, 180, ArcType.OPEN);
+                            graphicsContext.strokeArc(center2.x, center2.y, 8, 8, 0, 180, ArcType.ROUND);
+                            graphicsContext.strokeArc(center.x, center.y, 24, 24, 0, 180, ArcType.ROUND);
 
                         }
                     }
