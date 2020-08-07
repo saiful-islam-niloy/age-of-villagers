@@ -38,6 +38,6 @@ public class NationManager {
     }
 
     public ITerrain getTerrain() {
-        return new BangladeshiFarmerTerrain();
+        return nation.getTerrain();
     }
 }
