@@ -1,5 +1,6 @@
 package nation;
 
+import house.ArabBedouinHouse;
 import house.IHouse;
 import river.IWaterSource;
 import terrain.ITerrain;
@@ -13,7 +14,7 @@ public class ArabBedouin implements INation{
 
     @Override
     public IHouse getHouse() {
-        return null;
+        return new ArabBedouinHouse();
     }
 
     @Override

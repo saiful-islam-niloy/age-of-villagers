@@ -6,6 +6,8 @@ public class NationFactory {
 
         if (nationType == "Bangladeshi Farmers")
             return new BangladeshiFarmers();
+        else if(nationType == "Arab Bedouin")
+            return new ArabBedouin();
 
         return null;
     }
