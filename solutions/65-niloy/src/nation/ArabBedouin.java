@@ -5,6 +5,7 @@ import house.IHouse;
 import river.IWaterSource;
 import terrain.ArabBedouinTerrain;
 import terrain.ITerrain;
+import tree.ArabBedouinTree;
 import tree.ITree;
 
 public class ArabBedouin implements INation{
@@ -22,7 +23,7 @@ public class ArabBedouin implements INation{
 
     @Override
     public ITree getTree() {
-        return null;
+        return new ArabBedouinTree();
     }
 
     @Override

@@ -146,8 +146,8 @@ public class Controller {
 
     @FXML
     void selectTree(ActionEvent event) {
-        iTree = nationManager.getTree();
         if (tree.isSelected()) {
+            iTree = nationManager.getTree();
             if (iTree != null) {
                 iTree.getCanvas();
                 iTree.draw();

@@ -5,12 +5,11 @@ import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.ArcType;
 import shape.Point;
 
 public class ArabBedouinTree implements ITree{
     private Canvas canvas;
-    private boolean shouldBeDrawn = true;
+    private boolean shouldBeDrawn;
 
     private Point one;
     private Point two;

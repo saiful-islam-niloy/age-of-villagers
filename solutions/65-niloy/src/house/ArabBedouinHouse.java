@@ -49,6 +49,7 @@ public class ArabBedouinHouse implements IHouse{
                             graphicsContext.strokeLine(four.x, four.y, five.x, five.y);
                             graphicsContext.strokeLine(five.x, five.y, one.x, one.y);
                             graphicsContext.strokeLine(two.x, two.y, five.x, five.y);
+                            System.out.println("inside arab tree");
                         }
                     }
                 });
