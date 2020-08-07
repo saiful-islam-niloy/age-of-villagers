@@ -90,7 +90,8 @@ public class Controller {
 
         nationManager = new NationManager(inputNationName.getValue());
         iTerrain = nationManager.getTerrain();
-        iTerrain.draw();
+        if(iTerrain != null)
+            iTerrain.draw();
     }
 
 

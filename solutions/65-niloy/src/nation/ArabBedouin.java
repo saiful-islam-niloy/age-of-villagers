@@ -9,11 +9,13 @@ import tree.ITree;
 public class ArabBedouin implements INation{
     @Override
     public ITerrain getTerrain() {
+        System.out.println("Arab terrain");
         return null;
     }
 
     @Override
     public IHouse getHouse() {
+        System.out.println("Arab House Object Returned");
         return new ArabBedouinHouse();
     }
 
