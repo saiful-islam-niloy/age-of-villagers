@@ -46,7 +46,6 @@ public class EgyptianKingsHouse implements IHouse {
                             graphicsContext.strokeLine(one.x, one.y, four.x, four.y);
                             graphicsContext.strokeLine(two.x, two.y, three.x, three.y);
                             graphicsContext.strokeLine(three.x, three.y, four.x, four.y);
-                            System.out.println("inside arab tree");
                         }
                     }
                 });
