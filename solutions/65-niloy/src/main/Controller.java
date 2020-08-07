@@ -52,7 +52,7 @@ public class Controller {
     private ComboBox<String> inputNationName;
 
     private String nation[] =
-            { "Bangladeshi Farmers", "Arab Bedouin"};
+            {"Bangladeshi Farmers", "Arab Bedouin"};
 
     @FXML
     private Button createVillage;
@@ -90,7 +90,7 @@ public class Controller {
 
         nationManager = new NationManager(inputNationName.getValue());
         iTerrain = nationManager.getTerrain();
-        if(iTerrain != null)
+        if (iTerrain != null)
             iTerrain.draw();
     }
 
@@ -131,25 +131,31 @@ public class Controller {
 
     @FXML
     void selectHouse(ActionEvent event) {
-        if(house.isSelected()){
+        if (house.isSelected()) {
             iHouse = nationManager.getHouse();
-            iHouse.getCanvas();
-            iHouse.draw();
-            System.out.println("House Selected");
-        }else {
-            iHouse.releaseCanvas();
+            if (iHouse != null) {
+                iHouse.getCanvas();
+                iHouse.draw();
+                System.out.println("House Selected");
+            }
+        } else {
+            if (iHouse != null)
+                iHouse.releaseCanvas();
         }
     }
 
     @FXML
     void selectTree(ActionEvent event) {
-        if(tree.isSelected()){
-            iTree = nationManager.getTree();
-            iTree.getCanvas();
-            iTree.draw();
-            System.out.println("tree selected");
-        }else{
-            iTree.releaseCanvas();
+        iTree = nationManager.getTree();
+        if (tree.isSelected()) {
+            if (iTree != null) {
+                iTree.getCanvas();
+                iTree.draw();
+                System.out.println("tree selected");
+            }
+        } else {
+            if (iTree != null)
+                iTree.releaseCanvas();
             System.out.println("tree unchecked");
         }
     }
@@ -157,12 +163,15 @@ public class Controller {
 
     @FXML
     void selectWaterSource(ActionEvent event) {
-        if(waterSource.isSelected()){
+        if (waterSource.isSelected()) {
             iWaterSource = nationManager.getWaterSource();
-            iWaterSource.getCanvas();
-            iWaterSource.draw();
-        }else{
-            iWaterSource.releaseCanvas();
+            if (iWaterSource != null) {
+                iWaterSource.getCanvas();
+                iWaterSource.draw();
+            }
+        } else {
+            if (iWaterSource != null)
+                iWaterSource.releaseCanvas();
         }
     }
 }
