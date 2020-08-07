@@ -52,7 +52,7 @@ public class Controller {
     private ComboBox<String> inputNationName;
 
     private String nation[] =
-            {"Bangladeshi Farmers", "Arab Bedouin"};
+            {"Bangladeshi Farmers", "Arab Bedouin", "Egyptian Kings"};
 
     @FXML
     private Button createVillage;
