@@ -2,13 +2,14 @@ package nation;
 
 import house.IHouse;
 import river.IWaterSource;
+import terrain.EgyptianKingsTerrain;
 import terrain.ITerrain;
 import tree.ITree;
 
 public class EgyptianKings implements INation{
     @Override
     public ITerrain getTerrain() {
-        return null;
+        return new EgyptianKingsTerrain();
     }
 
     @Override
