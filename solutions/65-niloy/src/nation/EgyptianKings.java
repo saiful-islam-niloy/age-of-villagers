@@ -1,5 +1,6 @@
 package nation;
 
+import house.EgyptianKingsHouse;
 import house.IHouse;
 import river.EgyptianKingsWaterSource;
 import river.IWaterSource;
@@ -16,7 +17,7 @@ public class EgyptianKings implements INation{
 
     @Override
     public IHouse getHouse() {
-        return null;
+        return new EgyptianKingsHouse();
     }
 
     @Override
