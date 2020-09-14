@@ -7,14 +7,13 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.ArcType;
 import shape.Point;
+import shape.Rectangle;
 
 public class BangladeshiFarmersTree implements ITree {
     private Canvas canvas;
 
-    private Point one;
-    private Point two;
-    private Point three;
-    private Point four;
+    private Point topLeft;
+    private Point bottomRight;
     private Point center;
 
     private GraphicsContext graphicsContext;
@@ -28,11 +27,10 @@ public class BangladeshiFarmersTree implements ITree {
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
-        one = new Point(selectedPoint.x + 2, selectedPoint.y - 4);
-        two = new Point(selectedPoint.x + 2, selectedPoint.y + 12);
-        three = new Point(selectedPoint.x - 2, selectedPoint.y + 12);
-        four = new Point(selectedPoint.x - 2, selectedPoint.y - 4);
         center = new Point(selectedPoint.x - 8, selectedPoint.y - 12);
+
+        topLeft = new Point(selectedPoint.x + 2, selectedPoint.y - 4);
+        bottomRight = new Point(selectedPoint.x - 2, selectedPoint.y + 12);
     }
 
     @Override
@@ -47,16 +45,11 @@ public class BangladeshiFarmersTree implements ITree {
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            graphicsContext.strokeLine(one.x, one.y, two.x, two.y);
-                            graphicsContext.strokeLine(two.x, two.y, three.x, three.y);
-                            graphicsContext.strokeLine(three.x, three.y, four.x, four.y);
-                            graphicsContext.strokeLine(four.x, four.y, one.x, one.y);
+                            new Rectangle(topLeft, bottomRight, graphicsContext).draw();
                             graphicsContext.strokeArc(center.x, center.y, 16, 16, 0, 360, ArcType.OPEN);
-                            System.out.println("inside draw 2");
                         }
                     }
                 });
-        System.out.println("inside draw");
     }
 
     @Override
