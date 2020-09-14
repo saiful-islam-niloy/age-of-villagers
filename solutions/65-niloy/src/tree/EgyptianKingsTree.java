@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
+import shape.Line;
 import shape.Point;
 
 public class EgyptianKingsTree implements ITree{
@@ -53,16 +54,16 @@ public class EgyptianKingsTree implements ITree{
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            graphicsContext.strokeLine(one.x, one.y, two.x, two.y);
-                            graphicsContext.strokeLine(one.x, one.y, three.x, three.y);
+                            new Line(one, two, graphicsContext).draw();
+                            new Line(one, three, graphicsContext).draw();
 
-                            graphicsContext.strokeLine(two.x, two.y, four.x, four.y);
-                            graphicsContext.strokeLine(two.x, two.y, five.x, five.y);
-                            graphicsContext.strokeLine(two.x, two.y, six.x, six.y);
+                            new Line(two, four, graphicsContext).draw();
+                            new Line(two, five, graphicsContext).draw();
+                            new Line(two, six, graphicsContext).draw();
 
-                            graphicsContext.strokeLine(three.x, three.y, seven.x, seven.y);
-                            graphicsContext.strokeLine(three.x, three.y, eight.x, eight.y);
-                            graphicsContext.strokeLine(three.x, three.y, nine.x, nine.y);
+                            new Line(three, seven, graphicsContext).draw();
+                            new Line(three, eight, graphicsContext).draw();
+                            new Line(three, nine, graphicsContext).draw();
 
                         }
                     }

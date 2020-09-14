@@ -1,12 +1,10 @@
 package house;
 
 import canvas.CanvasSingleton;
-import house.IHouse;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.ArcType;
 import shape.HalfCircle;
 import shape.Point;
 
