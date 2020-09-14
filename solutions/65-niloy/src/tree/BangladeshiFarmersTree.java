@@ -6,6 +6,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.ArcType;
+import shape.Circle;
 import shape.Point;
 import shape.Rectangle;
 
@@ -46,7 +47,7 @@ public class BangladeshiFarmersTree implements ITree {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
                             new Rectangle(topLeft, bottomRight, graphicsContext).draw();
-                            graphicsContext.strokeArc(center.x, center.y, 16, 16, 0, 360, ArcType.OPEN);
+                            new Circle(center, 16, graphicsContext).draw();
                         }
                     }
                 });
