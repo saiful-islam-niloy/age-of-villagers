@@ -6,15 +6,17 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import shape.Point;
+import shape.Rectangle;
+import shape.Triangle;
 
 public class BangladeshiFarmersHouse implements IHouse {
     private Canvas canvas;
 
     private Point one;
-    private Point two;
+    private Point topLeft;
     private Point three;
-    private Point four;
-    private Point five;
+    private Point bottomRight;
+    private Point two;
 
     private boolean shouldBeDrawn = true;
 
@@ -24,11 +26,11 @@ public class BangladeshiFarmersHouse implements IHouse {
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
+        topLeft = new Point(selectedPoint.x - 8, selectedPoint.y - 2);
+        bottomRight = new Point(selectedPoint.x + 8, selectedPoint.y + 8);
+
         one = new Point(selectedPoint.x, selectedPoint.y - 8);
-        two = new Point(selectedPoint.x - 8, selectedPoint.y - 2);
-        three = new Point(selectedPoint.x - 8, selectedPoint.y + 8);
-        four = new Point(selectedPoint.x + 8, selectedPoint.y + 8);
-        five = new Point(selectedPoint.x + 8, selectedPoint.y - 2);
+        two = new Point(selectedPoint.x + 8, selectedPoint.y - 2);
     }
 
     @Override
@@ -43,12 +45,8 @@ public class BangladeshiFarmersHouse implements IHouse {
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            graphicsContext.strokeLine(one.x, one.y, two.x, two.y);
-                            graphicsContext.strokeLine(two.x, two.y, three.x, three.y);
-                            graphicsContext.strokeLine(three.x, three.y, four.x, four.y);
-                            graphicsContext.strokeLine(four.x, four.y, five.x, five.y);
-                            graphicsContext.strokeLine(five.x, five.y, one.x, one.y);
-                            graphicsContext.strokeLine(two.x, two.y, five.x, five.y);
+                            new Triangle(one, topLeft, two, graphicsContext).draw();
+                            new Rectangle(topLeft, bottomRight, graphicsContext).draw();
                         }
                     }
                 });

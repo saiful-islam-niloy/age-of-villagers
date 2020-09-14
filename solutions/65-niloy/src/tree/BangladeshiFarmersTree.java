@@ -5,7 +5,6 @@ import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.ArcType;
 import shape.Circle;
 import shape.Point;
 import shape.Rectangle;
