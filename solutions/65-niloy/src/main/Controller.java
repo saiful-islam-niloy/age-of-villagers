@@ -133,14 +133,10 @@ public class Controller {
     void selectHouse(ActionEvent event) {
         if (house.isSelected()) {
             iHouse = nationManager.getHouse();
-            if (iHouse != null) {
-                iHouse.getCanvas();
-                iHouse.draw();
-                System.out.println("House Selected");
-            }
+            iHouse.getCanvas();
+            iHouse.draw();
         } else {
-            if (iHouse != null)
-                iHouse.releaseCanvas();
+            iHouse.releaseCanvas();
         }
     }
 
@@ -148,15 +144,10 @@ public class Controller {
     void selectTree(ActionEvent event) {
         if (tree.isSelected()) {
             iTree = nationManager.getTree();
-            if (iTree != null) {
-                iTree.getCanvas();
-                iTree.draw();
-                System.out.println("tree selected");
-            }
+            iTree.getCanvas();
+            iTree.draw();
         } else {
-            if (iTree != null)
-                iTree.releaseCanvas();
-            System.out.println("tree unchecked");
+            iTree.releaseCanvas();
         }
     }
 
@@ -165,13 +156,10 @@ public class Controller {
     void selectWaterSource(ActionEvent event) {
         if (waterSource.isSelected()) {
             iWaterSource = nationManager.getWaterSource();
-            if (iWaterSource != null) {
-                iWaterSource.getCanvas();
-                iWaterSource.draw();
-            }
+            iWaterSource.getCanvas();
+            iWaterSource.draw();
         } else {
-            if (iWaterSource != null)
-                iWaterSource.releaseCanvas();
+            iWaterSource.releaseCanvas();
         }
     }
 }
