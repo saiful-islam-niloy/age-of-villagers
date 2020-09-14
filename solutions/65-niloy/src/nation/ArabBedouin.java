@@ -3,6 +3,7 @@ package nation;
 import house.ArabBedouinHouse;
 import house.IHouse;
 import river.IWaterSource;
+import river.NullRiver;
 import terrain.ArabBedouinTerrain;
 import terrain.ITerrain;
 import tree.ArabBedouinTree;
@@ -28,6 +29,6 @@ public class ArabBedouin implements INation{
 
     @Override
     public IWaterSource getWaterSource() {
-        return null;
+        return new NullRiver();
     }
 }
