@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
+import shape.Line;
 import shape.Point;
 
 public class ArabBedouinHouse implements IHouse{
@@ -43,13 +44,12 @@ public class ArabBedouinHouse implements IHouse{
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            graphicsContext.strokeLine(one.x, one.y, two.x, two.y);
-                            graphicsContext.strokeLine(two.x, two.y, three.x, three.y);
-                            graphicsContext.strokeLine(three.x, three.y, four.x, four.y);
-                            graphicsContext.strokeLine(four.x, four.y, five.x, five.y);
-                            graphicsContext.strokeLine(five.x, five.y, one.x, one.y);
-                            graphicsContext.strokeLine(two.x, two.y, five.x, five.y);
-                            System.out.println("inside arab tree");
+                            new Line(one, two, graphicsContext).draw();
+                            new Line(two, three, graphicsContext).draw();
+                            new Line(three, four, graphicsContext).draw();
+                            new Line(four, five, graphicsContext).draw();
+                            new Line(five, one, graphicsContext).draw();
+                            new Line(five, two, graphicsContext).draw();
                         }
                     }
                 });

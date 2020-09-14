@@ -12,10 +12,9 @@ import shape.Triangle;
 public class BangladeshiFarmersHouse implements IHouse {
     private Canvas canvas;
 
-    private Point one;
     private Point topLeft;
-    private Point three;
     private Point bottomRight;
+    private Point one;
     private Point two;
 
     private boolean shouldBeDrawn = true;

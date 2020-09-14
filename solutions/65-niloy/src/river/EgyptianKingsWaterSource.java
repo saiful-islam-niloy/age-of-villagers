@@ -6,6 +6,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.ArcType;
+import shape.Circle;
 import shape.Point;
 
 public class EgyptianKingsWaterSource implements IWaterSource {
@@ -35,8 +36,7 @@ public class EgyptianKingsWaterSource implements IWaterSource {
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
-
-                            graphicsContext.strokeArc(center.x, center.y, 12, 12, 0, 360, ArcType.OPEN);
+                            new Circle(center, 12, graphicsContext).draw();
                         }
                     }
                 });

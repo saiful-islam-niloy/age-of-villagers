@@ -7,6 +7,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.ArcType;
+import shape.HalfCircle;
 import shape.Point;
 
 public class InuitHuntersHouse implements IHouse {
@@ -39,9 +40,8 @@ public class InuitHuntersHouse implements IHouse {
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            graphicsContext.strokeArc(center2.x, center2.y, 8, 8, 0, 180, ArcType.ROUND);
-                            graphicsContext.strokeArc(center.x, center.y, 24, 24, 0, 180, ArcType.ROUND);
-
+                            new HalfCircle(center2, 8, graphicsContext).draw();
+                            new HalfCircle(center, 24, graphicsContext).draw();
                         }
                     }
                 });

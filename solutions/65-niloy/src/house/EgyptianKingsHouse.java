@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
+import shape.Line;
 import shape.Point;
 
 public class EgyptianKingsHouse implements IHouse {
@@ -41,11 +42,11 @@ public class EgyptianKingsHouse implements IHouse {
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            graphicsContext.strokeLine(one.x, one.y, two.x, two.y);
-                            graphicsContext.strokeLine(one.x, one.y, three.x, three.y);
-                            graphicsContext.strokeLine(one.x, one.y, four.x, four.y);
-                            graphicsContext.strokeLine(two.x, two.y, three.x, three.y);
-                            graphicsContext.strokeLine(three.x, three.y, four.x, four.y);
+                            new Line(one, two, graphicsContext).draw();
+                            new Line(one, three, graphicsContext).draw();
+                            new Line(one, four, graphicsContext).draw();
+                            new Line(two, three, graphicsContext).draw();
+                            new Line(three, four, graphicsContext).draw();
                         }
                     }
                 });
