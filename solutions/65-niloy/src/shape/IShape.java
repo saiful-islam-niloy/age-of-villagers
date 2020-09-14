@@ -1,5 +1,5 @@
 package shape;
 
-public interface Shape {
+public interface IShape {
     void draw();
 }

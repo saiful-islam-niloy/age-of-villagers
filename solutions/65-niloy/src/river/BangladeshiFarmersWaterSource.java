@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
+import shape.Line;
 import shape.Point;
 
 public class BangladeshiFarmersWaterSource implements IWaterSource{
@@ -52,15 +53,15 @@ public class BangladeshiFarmersWaterSource implements IWaterSource{
                         if(shouldBeDrawn){
                             calculateCornerPoints(new Point((int)event.getX(), (int)event.getY()));
 
-                            graphicsContext.strokeLine(one.x, one.y, two.x, two.y);
-                            graphicsContext.strokeLine(two.x, two.y, three.x, three.y);
-                            graphicsContext.strokeLine(three.x, three.y, four.x, four.y);
-                            graphicsContext.strokeLine(four.x, four.y, five.x, five.y);
-                            graphicsContext.strokeLine(five.x, five.y, six.x, six.y);
-                            graphicsContext.strokeLine(six.x, six.y, seven.x, seven.y);
-                            graphicsContext.strokeLine(seven.x, seven.y, eight.x, eight.y);
-                            graphicsContext.strokeLine(eight.x, eight.y, nine.x, nine.y);
-                            graphicsContext.strokeLine(nine.x, nine.y, one.x, one.y);
+                            new Line(one, two, graphicsContext).draw();
+                            new Line(two, three, graphicsContext).draw();
+                            new Line(three, four, graphicsContext).draw();
+                            new Line(four, five, graphicsContext).draw();
+                            new Line(five, six, graphicsContext).draw();
+                            new Line(six, seven, graphicsContext).draw();
+                            new Line(seven, eight, graphicsContext).draw();
+                            new Line(eight, nine, graphicsContext).draw();
+                            new Line(nine, one, graphicsContext).draw();
                         }
                     }
                 });
