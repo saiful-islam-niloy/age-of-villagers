@@ -1,12 +1,11 @@
 package utility;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import shape.Point;
 
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
 
 public class ReadFile {
     private File file;
@@ -32,4 +31,26 @@ public class ReadFile {
        return jsonObject.get("villageName").getAsString();
     }
 
+    public JsonArray getTreeX(){
+        return jsonObject.getAsJsonArray("treeX");
+    }
+
+    public JsonArray getTreeY(){
+        return jsonObject.getAsJsonArray("treeY");
+    }
+
+    public JsonArray getHouseX(){
+        return jsonObject.getAsJsonArray("houseX");
+    }
+
+    public JsonArray getHouseY(){
+        return jsonObject.getAsJsonArray("houseY");
+    }
+    public JsonArray getWaterResourceX(){
+        return jsonObject.getAsJsonArray("waterResourceX");
+    }
+
+    public JsonArray getWaterResourceY(){
+        return jsonObject.getAsJsonArray("waterResourceY");
+    }
 }
