@@ -8,6 +8,7 @@ import javafx.scene.input.MouseEvent;
 import shape.Circle;
 import shape.Point;
 import shape.Rectangle;
+import state.CurrentState;
 
 public class BangladeshiFarmersTree implements ITree {
     private Canvas canvas;
@@ -21,12 +22,16 @@ public class BangladeshiFarmersTree implements ITree {
 
     private boolean shouldBeDrawn = true;
 
+    private CurrentState currentState;
+
     public BangladeshiFarmersTree() {
         canvasSingleton = CanvasSingleton.getInstance();
         this.canvas = canvasSingleton.getCanvas();
+        currentState = CurrentState.getInstance();
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
+        currentState.addTree(selectedPoint);
         center = new Point(selectedPoint.x - 8, selectedPoint.y - 12);
 
         topLeft = new Point(selectedPoint.x + 2, selectedPoint.y - 4);

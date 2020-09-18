@@ -2,9 +2,11 @@ package utility;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import shape.Point;
 
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 public class ReadFile {
     private File file;
@@ -29,4 +31,5 @@ public class ReadFile {
     public String getVillageName(){
        return jsonObject.get("villageName").getAsString();
     }
+
 }
