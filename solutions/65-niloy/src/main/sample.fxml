@@ -49,6 +49,17 @@
                               <Button fx:id="createVillage" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="142.0" mnemonicParsing="false" onAction="#createVillage" text="Create" />
                            </children>
                         </AnchorPane>
+                        <AnchorPane fx:id="openLayout" layoutX="191.0" layoutY="109.0" prefHeight="200.0" prefWidth="232.0" visible="false">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="38.0" prefWidth="232.0" style="-fx-padding:10;" text="Select Nation" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="inputNationNameForOpen" layoutX="43.0" layoutY="94.0" prefWidth="150.0" promptText="Nation" />
+                              <Button fx:id="openVillageButton" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="142.0" mnemonicParsing="false" onAction="#createVillage" text="Open" />
+                           </children>
+                        </AnchorPane>
                      </children></AnchorPane>
               </items>
             </SplitPane>

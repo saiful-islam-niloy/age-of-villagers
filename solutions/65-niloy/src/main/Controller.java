@@ -64,6 +64,15 @@ public class Controller {
     @FXML
     private Label nationName;
 
+    @FXML
+    private AnchorPane openLayout;
+
+    @FXML
+    private ComboBox<String> inputNationNameForOpen;
+
+    @FXML
+    private Button openVillageButton;
+
     private CurrentState currentState = CurrentState.getInstance();
 
     private Canvas canvas;
@@ -110,6 +119,9 @@ public class Controller {
         File file = fileChooser.showOpenDialog(null);
         ReadFile readFile = new ReadFile(file);
         villageName.setText(readFile.getVillageName());
+
+        inputNationNameForOpen.setItems(FXCollections.observableArrayList(nation));
+        openLayout.setVisible(true);
     }
 
     @FXML
