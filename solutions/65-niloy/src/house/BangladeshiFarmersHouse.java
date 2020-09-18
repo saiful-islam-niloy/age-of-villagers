@@ -8,6 +8,7 @@ import javafx.scene.input.MouseEvent;
 import shape.Point;
 import shape.Rectangle;
 import shape.Triangle;
+import state.CurrentState;
 
 public class BangladeshiFarmersHouse implements IHouse {
     private Canvas canvas;
@@ -18,13 +19,16 @@ public class BangladeshiFarmersHouse implements IHouse {
     private Point two;
 
     private boolean shouldBeDrawn = true;
+    private CurrentState currentState;
 
     public BangladeshiFarmersHouse() {
         CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
         this.canvas = canvasSingleton.getCanvas();
+        currentState = CurrentState.getInstance();
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
+        currentState.addHouse(selectedPoint);
         topLeft = new Point(selectedPoint.x - 8, selectedPoint.y - 2);
         bottomRight = new Point(selectedPoint.x + 8, selectedPoint.y + 8);
 

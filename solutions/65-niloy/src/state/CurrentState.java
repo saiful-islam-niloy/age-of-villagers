@@ -45,7 +45,9 @@ public class CurrentState {
         waterResource.add(point);
     }
 
-    public JsonObject getCurrentStateObject(){
+    private void addTreeData(){
+        pointX = new JsonArray();
+        pointY = new JsonArray();
         for (int i = 0; i< tree.size(); i++)
             pointX.add(tree.get(i).x);
         for (int i = 0; i< tree.size(); i++)
@@ -53,6 +55,37 @@ public class CurrentState {
 
         state.add("treeX", pointX);
         state.add("treeY", pointY);
+    }
+
+    private void addHouseData(){
+        pointX = new JsonArray();
+        pointY = new JsonArray();
+        for (int i = 0; i< house.size(); i++)
+            pointX.add(house.get(i).x);
+        for (int i = 0; i< tree.size(); i++)
+            pointY.add(house.get(i).y);
+
+        state.add("houseX", pointX);
+        state.add("houseY", pointY);
+    }
+
+    private void addWaterResourceData(){
+        pointX = new JsonArray();
+        pointY = new JsonArray();
+        for (int i = 0; i< waterResource.size(); i++)
+            pointX.add(waterResource.get(i).x);
+        for (int i = 0; i< waterResource.size(); i++)
+            pointY.add(waterResource.get(i).y);
+
+        state.add("waterResourceX", pointX);
+        state.add("waterResourceY", pointY);
+    }
+
+
+    public JsonObject getCurrentStateObject(){
+        addHouseData();
+        addTreeData();
+        addWaterResourceData();
         return state;
     }
 }

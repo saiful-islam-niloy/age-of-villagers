@@ -7,11 +7,13 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import shape.Line;
 import shape.Point;
+import state.CurrentState;
 
 public class BangladeshiFarmersWaterSource implements IWaterSource{
     private Canvas canvas;
     private boolean shouldBeDrawn;
     private CanvasSingleton canvasSingleton;
+    private CurrentState currentState;
 
     private Point one;
     private Point two;
@@ -26,9 +28,11 @@ public class BangladeshiFarmersWaterSource implements IWaterSource{
     public BangladeshiFarmersWaterSource() {
         canvasSingleton = CanvasSingleton.getInstance();
         this.canvas = canvasSingleton.getCanvas();
+        currentState = CurrentState.getInstance();
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
+        currentState.addWaterResource(selectedPoint);
         one = new Point(selectedPoint.x - 12, selectedPoint.y);
         two = new Point(selectedPoint.x - 6, selectedPoint.y +4);
         three = new Point(selectedPoint.x - 3, selectedPoint.y + 8);
