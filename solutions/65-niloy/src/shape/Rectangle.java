@@ -1,7 +1,5 @@
 package shape;
 
-import javafx.scene.canvas.GraphicsContext;
-
 public class Rectangle implements IShape{
     private Point topLeft;
     private Point bottomRight;
