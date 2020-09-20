@@ -12,6 +12,7 @@ import state.CurrentState;
 
 public class BangladeshiFarmersHouse implements IHouse {
     private Canvas canvas;
+    private GraphicsContext graphicsContext;
 
     private Point topLeft;
     private Point bottomRight;
@@ -37,8 +38,15 @@ public class BangladeshiFarmersHouse implements IHouse {
     }
 
     @Override
-    public void draw() {
-        final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+    public void draw(Point point) {
+        calculateCornerPoints(point);
+        new Triangle(one, topLeft, two).draw();
+        new Rectangle(topLeft, bottomRight).draw();
+    }
+
+    @Override
+    public void canvasController() {
+        graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
                 new EventHandler<MouseEvent>() {
@@ -46,10 +54,7 @@ public class BangladeshiFarmersHouse implements IHouse {
                     @Override
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
-                            calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
-
-                            new Triangle(one, topLeft, two).draw();
-                            new Rectangle(topLeft, bottomRight).draw();
+                            draw(new Point((int) event.getX(), (int) event.getY()));
                         }
                     }
                 });

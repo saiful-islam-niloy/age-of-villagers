@@ -10,6 +10,7 @@ import shape.Point;
 
 public class InuitHuntersHouse implements IHouse {
     private Canvas canvas;
+    private GraphicsContext graphicsContext;
     private boolean shouldBeDrawn = true;
 
     private Point center;
@@ -27,8 +28,15 @@ public class InuitHuntersHouse implements IHouse {
     }
 
     @Override
-    public void draw() {
-        final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+    public void draw(Point point) {
+        calculateCornerPoints(point);
+        new HalfCircle(center2, 8).draw();
+        new HalfCircle(center, 24).draw();
+    }
+
+    @Override
+    public void canvasController() {
+        graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
                 new EventHandler<MouseEvent>() {
@@ -36,10 +44,7 @@ public class InuitHuntersHouse implements IHouse {
                     @Override
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
-                            calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
-
-                            new HalfCircle(center2, 8).draw();
-                            new HalfCircle(center, 24).draw();
+                            draw(new Point((int) event.getX(), (int) event.getY()));
                         }
                     }
                 });

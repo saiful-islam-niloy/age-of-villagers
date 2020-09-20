@@ -10,6 +10,7 @@ import shape.Point;
 
 public class EgyptianKingsHouse implements IHouse {
     private Canvas canvas;
+    private GraphicsContext graphicsContext;
     private boolean shouldBeDrawn = true;
 
     private Point one;
@@ -31,8 +32,18 @@ public class EgyptianKingsHouse implements IHouse {
     }
 
     @Override
-    public void draw() {
-        final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+    public void draw(Point point) {
+        calculateCornerPoints(point);
+        new Line(one, two).draw();
+        new Line(one, three).draw();
+        new Line(one, four).draw();
+        new Line(two, three).draw();
+        new Line(three, four).draw();
+    }
+
+    @Override
+    public void canvasController() {
+        graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
                 new EventHandler<MouseEvent>() {
@@ -40,13 +51,7 @@ public class EgyptianKingsHouse implements IHouse {
                     @Override
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
-                            calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
-
-                            new Line(one, two).draw();
-                            new Line(one, three).draw();
-                            new Line(one, four).draw();
-                            new Line(two, three).draw();
-                            new Line(three, four).draw();
+                            draw(new Point((int) event.getX(), (int) event.getY()));
                         }
                     }
                 });

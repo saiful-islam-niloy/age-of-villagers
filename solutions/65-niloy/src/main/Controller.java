@@ -138,6 +138,7 @@ public class Controller {
         VillageLoader villageLoader = new VillageLoader(inputNationNameForOpen.getValue());
         villageLoader.loadTerrain();
         villageLoader.loadTree(readFile.getTreeX(), readFile.getTreeY());
+        villageLoader.loadHouse(readFile.getHouseX(), readFile.getHouseY());
     }
 
     @FXML
@@ -161,7 +162,7 @@ public class Controller {
         if (house.isSelected()) {
             iHouse = nationManager.getHouse();
             iHouse.getCanvas();
-            iHouse.draw();
+            iHouse.canvasController();
         } else {
             iHouse.releaseCanvas();
         }

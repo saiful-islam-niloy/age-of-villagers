@@ -1,7 +1,11 @@
 package house;
 
+import shape.Point;
+
 public interface IHouse {
-    void draw();
+    void draw(Point point);
+
+    void canvasController();
 
     void releaseCanvas();
 

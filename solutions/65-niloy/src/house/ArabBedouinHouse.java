@@ -10,6 +10,7 @@ import shape.Point;
 
 public class ArabBedouinHouse implements IHouse{
     private Canvas canvas;
+    private GraphicsContext graphicsContext;
     private boolean shouldBeDrawn = true;
 
     private Point one;
@@ -33,8 +34,19 @@ public class ArabBedouinHouse implements IHouse{
     }
 
     @Override
-    public void draw() {
-        final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+    public void draw(Point point) {
+        calculateCornerPoints(point);
+        new Line(one, two).draw();
+        new Line(two, three).draw();
+        new Line(three, four).draw();
+        new Line(four, five).draw();
+        new Line(five, one).draw();
+        new Line(five, two).draw();
+    }
+
+    @Override
+    public void canvasController() {
+        graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
                 new EventHandler<MouseEvent>() {
@@ -42,18 +54,12 @@ public class ArabBedouinHouse implements IHouse{
                     @Override
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
-                            calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
-
-                            new Line(one, two).draw();
-                            new Line(two, three).draw();
-                            new Line(three, four).draw();
-                            new Line(four, five).draw();
-                            new Line(five, one).draw();
-                            new Line(five, two).draw();
+                            draw(new Point((int) event.getX(), (int) event.getY()));
                         }
                     }
                 });
     }
+
 
     @Override
     public void releaseCanvas() {

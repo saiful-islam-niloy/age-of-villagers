@@ -21,6 +21,11 @@ public class VillageLoader {
             nationManager.getTree().draw(new Point(treeX.get(i).getAsInt(), treeY.get(i).getAsInt()));
     }
 
+    public void loadHouse(JsonArray houseX, JsonArray houseY){
+        for (int i = 0; i< houseX.size(); i++)
+            nationManager.getHouse().draw(new Point(houseX.get(i).getAsInt(), houseY.get(i).getAsInt()));
+    }
+
     public void loadTerrain(){
         nationManager.getTerrain().draw();
     }

@@ -19,7 +19,7 @@ public class NationManager {
 
     public void draw(){
 //        nation.drawTerrain();
-        nation.getHouse().draw();
+//        nation.getHouse().draw();
 //        nation.drawTree();
 //        nation.drawRiver();
     }
