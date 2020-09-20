@@ -57,15 +57,15 @@ public class BangladeshiFarmersWaterSource implements IWaterSource{
                         if(shouldBeDrawn){
                             calculateCornerPoints(new Point((int)event.getX(), (int)event.getY()));
 
-                            new Line(one, two, graphicsContext).draw();
-                            new Line(two, three, graphicsContext).draw();
-                            new Line(three, four, graphicsContext).draw();
-                            new Line(four, five, graphicsContext).draw();
-                            new Line(five, six, graphicsContext).draw();
-                            new Line(six, seven, graphicsContext).draw();
-                            new Line(seven, eight, graphicsContext).draw();
-                            new Line(eight, nine, graphicsContext).draw();
-                            new Line(nine, one, graphicsContext).draw();
+                            new Line(one, two).draw();
+                            new Line(two, three).draw();
+                            new Line(three, four).draw();
+                            new Line(four, five).draw();
+                            new Line(five, six).draw();
+                            new Line(six, seven).draw();
+                            new Line(seven, eight).draw();
+                            new Line(eight, nine).draw();
+                            new Line(nine, one).draw();
                         }
                     }
                 });

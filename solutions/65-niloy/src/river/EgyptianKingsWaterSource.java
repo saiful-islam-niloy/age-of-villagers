@@ -36,7 +36,7 @@ public class EgyptianKingsWaterSource implements IWaterSource {
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
-                            new Circle(center, 12, graphicsContext).draw();
+                            new Circle(center, 12).draw();
                         }
                     }
                 });
