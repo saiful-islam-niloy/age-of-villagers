@@ -5,13 +5,12 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import java.io.File;
-import java.io.FileReader;
 
-public class ReadFile {
+public class FileReader {
     private File file;
     private JsonObject jsonObject;
 
-    public ReadFile(File file) {
+    public FileReader(File file) {
         this.file = file;
         loadJson();
     }
@@ -20,7 +19,7 @@ public class ReadFile {
         JsonParser parser = new JsonParser();
 
         try {
-            Object obj = parser.parse(new FileReader(file));
+            Object obj = parser.parse(new java.io.FileReader(file));
             jsonObject = (JsonObject) obj;
         } catch (Exception e) {
             e.printStackTrace();

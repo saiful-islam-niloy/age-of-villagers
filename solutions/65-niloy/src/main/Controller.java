@@ -14,7 +14,7 @@ import river.IWaterSource;
 import state.CurrentState;
 import terrain.ITerrain;
 import tree.ITree;
-import utility.ReadFile;
+import utility.FileReader;
 import utility.SaveFile;
 import utility.VillageLoader;
 
@@ -83,7 +83,7 @@ public class Controller {
     private IWaterSource iWaterSource;
     private ITerrain iTerrain;
 
-    private ReadFile readFile;
+    private FileReader fileReader;
 
 
     @FXML
@@ -120,8 +120,8 @@ public class Controller {
         fileChooser.getExtensionFilters().add(extFilter);
 
         File file = fileChooser.showOpenDialog(null);
-        readFile = new ReadFile(file);
-        villageName.setText(readFile.getVillageName());
+        fileReader = new FileReader(file);
+        villageName.setText(fileReader.getVillageName());
         drawingSpace.getChildren().remove(canvas);
         inputNationNameForOpen.setItems(FXCollections.observableArrayList(nation));
         openLayout.setVisible(true);
@@ -137,9 +137,9 @@ public class Controller {
         nationManager = new NationManager(inputNationNameForOpen.getValue());
         VillageLoader villageLoader = new VillageLoader(nationManager);
         villageLoader.loadTerrain();
-        villageLoader.loadTree(readFile.getTreeX(), readFile.getTreeY());
-        villageLoader.loadHouse(readFile.getHouseX(), readFile.getHouseY());
-        villageLoader.loadWaterResource(readFile.getWaterResourceX(), readFile.getWaterResourceY());
+        villageLoader.loadTree(fileReader.getTreeX(), fileReader.getTreeY());
+        villageLoader.loadHouse(fileReader.getHouseX(), fileReader.getHouseY());
+        villageLoader.loadWaterResource(fileReader.getWaterResourceX(), fileReader.getWaterResourceY());
     }
 
     @FXML
