@@ -10,6 +10,7 @@ import shape.Point;
 
 public class EgyptianKingsTree implements ITree{
     private Canvas canvas;
+    private GraphicsContext graphicsContext;
     private boolean shouldBeDrawn;
 
     private Point one;
@@ -43,29 +44,34 @@ public class EgyptianKingsTree implements ITree{
     }
 
     @Override
-    public void draw() {
-        final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+    public void draw(Point point) {
+        if (shouldBeDrawn) {
+            calculateCornerPoints(point);
+
+            new Line(one, two, graphicsContext).draw();
+            new Line(one, three, graphicsContext).draw();
+
+            new Line(two, four, graphicsContext).draw();
+            new Line(two, five, graphicsContext).draw();
+            new Line(two, six, graphicsContext).draw();
+
+            new Line(three, seven, graphicsContext).draw();
+            new Line(three, eight, graphicsContext).draw();
+            new Line(three, nine, graphicsContext).draw();
+
+        }
+    }
+
+    @Override
+    public void canvasController() {
+        graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
                 new EventHandler<MouseEvent>() {
 
                     @Override
                     public void handle(MouseEvent event) {
-                        if (shouldBeDrawn) {
-                            calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
-
-                            new Line(one, two, graphicsContext).draw();
-                            new Line(one, three, graphicsContext).draw();
-
-                            new Line(two, four, graphicsContext).draw();
-                            new Line(two, five, graphicsContext).draw();
-                            new Line(two, six, graphicsContext).draw();
-
-                            new Line(three, seven, graphicsContext).draw();
-                            new Line(three, eight, graphicsContext).draw();
-                            new Line(three, nine, graphicsContext).draw();
-
-                        }
+                        draw(new Point((int) event.getX(), (int) event.getY()));
                     }
                 });
     }
