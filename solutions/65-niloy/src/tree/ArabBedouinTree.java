@@ -8,10 +8,12 @@ import javafx.scene.input.MouseEvent;
 import shape.Line;
 import shape.Point;
 import shape.Rectangle;
+import state.CurrentState;
 
 public class ArabBedouinTree implements ITree{
     private Canvas canvas;
     private GraphicsContext graphicsContext;
+    private CurrentState currentState;
     private boolean shouldBeDrawn;
 
     private Point topLeft;
@@ -26,6 +28,7 @@ public class ArabBedouinTree implements ITree{
     public ArabBedouinTree() {
         CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
         this.canvas = canvasSingleton.getCanvas();
+        currentState = CurrentState.getInstance();
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
@@ -64,7 +67,9 @@ public class ArabBedouinTree implements ITree{
 
                     @Override
                     public void handle(MouseEvent event) {
-                        draw(new Point((int) event.getX(), (int) event.getY()));
+                        Point selectedPoint = new Point((int) event.getX(), (int) event.getY()) ;
+                        draw(selectedPoint);
+                        currentState.addTree(selectedPoint);
                     }
                 });
     }

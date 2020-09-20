@@ -7,10 +7,12 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import shape.Line;
 import shape.Point;
+import state.CurrentState;
 
 public class EgyptianKingsTree implements ITree{
     private Canvas canvas;
     private GraphicsContext graphicsContext;
+    private CurrentState currentState;
     private boolean shouldBeDrawn;
 
     private Point one;
@@ -27,6 +29,7 @@ public class EgyptianKingsTree implements ITree{
     public EgyptianKingsTree() {
         CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
         this.canvas = canvasSingleton.getCanvas();
+        currentState = CurrentState.getInstance();
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
@@ -69,7 +72,9 @@ public class EgyptianKingsTree implements ITree{
                     @Override
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
-                            draw(new Point((int) event.getX(), (int) event.getY()));
+                            Point selectedPoint = new Point((int) event.getX(), (int) event.getY());
+                            draw(selectedPoint);
+                            currentState.addTree(selectedPoint);
                         }
                     }
                 });
