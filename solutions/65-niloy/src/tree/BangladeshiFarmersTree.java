@@ -39,7 +39,16 @@ public class BangladeshiFarmersTree implements ITree {
     }
 
     @Override
-    public void draw() {
+    public void draw(Point point) {
+        if (shouldBeDrawn) {
+            calculateCornerPoints(point);
+            new Rectangle(topLeft, bottomRight, graphicsContext).draw();
+            new Circle(center, 16, graphicsContext).draw();
+        }
+    }
+
+    @Override
+    public void canvasController() {
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -47,12 +56,7 @@ public class BangladeshiFarmersTree implements ITree {
 
                     @Override
                     public void handle(MouseEvent event) {
-                        if (shouldBeDrawn) {
-                            calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
-
-                            new Rectangle(topLeft, bottomRight, graphicsContext).draw();
-                            new Circle(center, 16, graphicsContext).draw();
-                        }
+                        draw(new Point((int) event.getX(), (int) event.getY()));
                     }
                 });
     }

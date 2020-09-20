@@ -1,7 +1,10 @@
 package tree;
 
+import shape.Point;
+
 public interface ITree {
-    void draw();
+    void draw(Point point);
+    void canvasController();
     void releaseCanvas();
     void getCanvas();
 }
