@@ -33,7 +33,6 @@ public class BangladeshiFarmersWaterSource implements IWaterSource{
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
-        currentState.addWaterResource(selectedPoint);
         one = new Point(selectedPoint.x - 12, selectedPoint.y);
         two = new Point(selectedPoint.x - 6, selectedPoint.y +4);
         three = new Point(selectedPoint.x - 3, selectedPoint.y + 8);
@@ -69,7 +68,9 @@ public class BangladeshiFarmersWaterSource implements IWaterSource{
                     @Override
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
-                            draw(new Point((int) event.getX(), (int) event.getY()));
+                            Point selectedPoint = new Point((int) event.getX(), (int) event.getY());
+                            draw(selectedPoint);
+                            currentState.addWaterResource(selectedPoint);
                         }
                     }
                 });

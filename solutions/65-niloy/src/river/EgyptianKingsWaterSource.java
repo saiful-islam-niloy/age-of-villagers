@@ -7,10 +7,12 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import shape.Circle;
 import shape.Point;
+import state.CurrentState;
 
 public class EgyptianKingsWaterSource implements IWaterSource {
     private Canvas canvas;
     private GraphicsContext graphicsContext;
+    private CurrentState currentState;
     private boolean shouldBeDrawn;
     private CanvasSingleton canvasSingleton;
 
@@ -19,6 +21,7 @@ public class EgyptianKingsWaterSource implements IWaterSource {
     public EgyptianKingsWaterSource() {
         canvasSingleton = CanvasSingleton.getInstance();
         this.canvas = canvasSingleton.getCanvas();
+        currentState = CurrentState.getInstance();
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
@@ -41,7 +44,9 @@ public class EgyptianKingsWaterSource implements IWaterSource {
                     @Override
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
-                            draw(new Point((int) event.getX(), (int) event.getY()));
+                            Point selectedPoint = new Point((int) event.getX(), (int) event.getY());
+                            draw(selectedPoint);
+                            currentState.addWaterResource(selectedPoint);
                         }
                     }
                 });
