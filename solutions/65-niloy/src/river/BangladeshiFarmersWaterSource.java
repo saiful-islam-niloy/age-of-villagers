@@ -11,6 +11,7 @@ import state.CurrentState;
 
 public class BangladeshiFarmersWaterSource implements IWaterSource{
     private Canvas canvas;
+    private GraphicsContext graphicsContext;
     private boolean shouldBeDrawn;
     private CanvasSingleton canvasSingleton;
     private CurrentState currentState;
@@ -46,26 +47,29 @@ public class BangladeshiFarmersWaterSource implements IWaterSource{
 
 
     @Override
-    public void draw() {
-        final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+    public void draw(Point point) {
+        calculateCornerPoints(point);
+        new Line(one, two).draw();
+        new Line(two, three).draw();
+        new Line(three, four).draw();
+        new Line(four, five).draw();
+        new Line(five, six).draw();
+        new Line(six, seven).draw();
+        new Line(seven, eight).draw();
+        new Line(eight, nine).draw();
+        new Line(nine, one).draw();
+    }
+    @Override
+    public void canvasController() {
+        graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
-                new EventHandler<MouseEvent>(){
+                new EventHandler<MouseEvent>() {
 
                     @Override
                     public void handle(MouseEvent event) {
-                        if(shouldBeDrawn){
-                            calculateCornerPoints(new Point((int)event.getX(), (int)event.getY()));
-
-                            new Line(one, two).draw();
-                            new Line(two, three).draw();
-                            new Line(three, four).draw();
-                            new Line(four, five).draw();
-                            new Line(five, six).draw();
-                            new Line(six, seven).draw();
-                            new Line(seven, eight).draw();
-                            new Line(eight, nine).draw();
-                            new Line(nine, one).draw();
+                        if (shouldBeDrawn) {
+                            draw(new Point((int) event.getX(), (int) event.getY()));
                         }
                     }
                 });

@@ -16,6 +16,10 @@ public class VillageLoader {
         nationManager = new NationManager(villageType);
     }
 
+    public void loadTerrain(){
+        nationManager.getTerrain().draw();
+    }
+
     public void loadTree(JsonArray treeX, JsonArray treeY){
         for (int i = 0; i< treeX.size(); i++)
             nationManager.getTree().draw(new Point(treeX.get(i).getAsInt(), treeY.get(i).getAsInt()));
@@ -26,7 +30,8 @@ public class VillageLoader {
             nationManager.getHouse().draw(new Point(houseX.get(i).getAsInt(), houseY.get(i).getAsInt()));
     }
 
-    public void loadTerrain(){
-        nationManager.getTerrain().draw();
+    public void loadWaterResource(JsonArray waterResourceX, JsonArray waterResourceY){
+        for (int i = 0; i< waterResourceX.size(); i++)
+            nationManager.getWaterSource().draw(new Point(waterResourceX.get(i).getAsInt(), waterResourceY.get(i).getAsInt()));
     }
 }

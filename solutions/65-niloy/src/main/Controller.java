@@ -139,6 +139,7 @@ public class Controller {
         villageLoader.loadTerrain();
         villageLoader.loadTree(readFile.getTreeX(), readFile.getTreeY());
         villageLoader.loadHouse(readFile.getHouseX(), readFile.getHouseY());
+        villageLoader.loadWaterResource(readFile.getWaterResourceX(), readFile.getWaterResourceY());
     }
 
     @FXML
@@ -185,7 +186,7 @@ public class Controller {
         if (waterSource.isSelected()) {
             iWaterSource = nationManager.getWaterSource();
             iWaterSource.getCanvas();
-            iWaterSource.draw();
+            iWaterSource.canvasController();
         } else {
             iWaterSource.releaseCanvas();
         }
