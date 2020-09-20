@@ -122,7 +122,7 @@ public class Controller {
         File file = fileChooser.showOpenDialog(null);
         readFile = new ReadFile(file);
         villageName.setText(readFile.getVillageName());
-
+        drawingSpace.getChildren().remove(canvas);
         inputNationNameForOpen.setItems(FXCollections.observableArrayList(nation));
         openLayout.setVisible(true);
 
