@@ -2,7 +2,6 @@ package nation;
 
 import house.IHouse;
 import river.IWaterSource;
-import terrain.BangladeshiFarmerTerrain;
 import terrain.ITerrain;
 import tree.ITree;
 
@@ -15,13 +14,6 @@ public class NationManager {
         this.nationType = nationType;
         nationFactory = new NationFactory();
         nation = nationFactory.getNation(nationType);
-    }
-
-    public void draw(){
-//        nation.drawTerrain();
-//        nation.getHouse().draw();
-//        nation.drawTree();
-//        nation.drawRiver();
     }
 
     public IHouse getHouse(){
