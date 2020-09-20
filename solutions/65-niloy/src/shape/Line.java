@@ -15,7 +15,7 @@ public class Line implements IShape {
     @Override
     public void draw() {
         CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
-        GraphicsContext graphicsContext2 = canvasSingleton.getCanvas().getGraphicsContext2D();
-        graphicsContext2.strokeLine(point1.x, point1.y, point2.x, point2.y);
+        GraphicsContext graphicsContext = canvasSingleton.getCanvas().getGraphicsContext2D();
+        graphicsContext.strokeLine(point1.x, point1.y, point2.x, point2.y);
     }
 }

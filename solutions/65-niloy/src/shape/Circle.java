@@ -1,7 +1,6 @@
 package shape;
 
 import canvas.CanvasSingleton;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.shape.ArcType;
 
