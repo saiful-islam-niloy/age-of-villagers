@@ -44,6 +44,7 @@ public class ArabBedouinTree implements ITree{
 
     @Override
     public void draw(Point point) {
+        calculateCornerPoints(point);
         new Rectangle(topLeft, bottomRight).draw();
 
         new Line(topLeft, one).draw();
@@ -62,9 +63,11 @@ public class ArabBedouinTree implements ITree{
 
                     @Override
                     public void handle(MouseEvent event) {
-                        Point selectedPoint = new Point((int) event.getX(), (int) event.getY()) ;
-                        draw(selectedPoint);
-                        currentState.addTree(selectedPoint);
+                        if(shouldBeDrawn){
+                            Point selectedPoint = new Point((int) event.getX(), (int) event.getY()) ;
+                            draw(selectedPoint);
+                            currentState.addTree(selectedPoint);
+                        }
                     }
                 });
     }
