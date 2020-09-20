@@ -11,6 +11,7 @@ import shape.Rectangle;
 
 public class ArabBedouinTree implements ITree{
     private Canvas canvas;
+    private GraphicsContext graphicsContext;
     private boolean shouldBeDrawn;
 
     private Point topLeft;
@@ -39,26 +40,31 @@ public class ArabBedouinTree implements ITree{
     }
 
     @Override
-    public void draw() {
-        final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+    public void draw(Point point) {
+        if (shouldBeDrawn) {
+            calculateCornerPoints(point);
+
+            new Rectangle(topLeft, bottomRight, graphicsContext).draw();
+
+            new Line(topLeft, one, graphicsContext).draw();
+            new Line(topLeft, two, graphicsContext).draw();
+            new Line(topLeft, three, graphicsContext).draw();
+            new Line(topLeft, four, graphicsContext).draw();
+            new Line(topLeft, five, graphicsContext).draw();
+
+        }
+    }
+
+    @Override
+    public void canvasController() {
+        graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
                 new EventHandler<MouseEvent>() {
 
                     @Override
                     public void handle(MouseEvent event) {
-                        if (shouldBeDrawn) {
-                            calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
-
-                            new Rectangle(topLeft, bottomRight, graphicsContext).draw();
-
-                            new Line(topLeft, one, graphicsContext).draw();
-                            new Line(topLeft, two, graphicsContext).draw();
-                            new Line(topLeft, three, graphicsContext).draw();
-                            new Line(topLeft, four, graphicsContext).draw();
-                            new Line(topLeft, five, graphicsContext).draw();
-
-                        }
+                        draw(new Point((int) event.getX(), (int) event.getY()));
                     }
                 });
     }
