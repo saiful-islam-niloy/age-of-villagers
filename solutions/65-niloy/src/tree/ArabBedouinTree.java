@@ -44,18 +44,13 @@ public class ArabBedouinTree implements ITree{
 
     @Override
     public void draw(Point point) {
-        if (shouldBeDrawn) {
-            calculateCornerPoints(point);
+        new Rectangle(topLeft, bottomRight).draw();
 
-            new Rectangle(topLeft, bottomRight).draw();
-
-            new Line(topLeft, one).draw();
-            new Line(topLeft, two).draw();
-            new Line(topLeft, three).draw();
-            new Line(topLeft, four).draw();
-            new Line(topLeft, five).draw();
-
-        }
+        new Line(topLeft, one).draw();
+        new Line(topLeft, two).draw();
+        new Line(topLeft, three).draw();
+        new Line(topLeft, four).draw();
+        new Line(topLeft, five).draw();
     }
 
     @Override
