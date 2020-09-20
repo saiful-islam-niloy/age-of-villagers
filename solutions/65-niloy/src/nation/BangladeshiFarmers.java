@@ -27,7 +27,6 @@ public class BangladeshiFarmers implements INation {
 
     @Override
     public ITerrain getTerrain() {
-        System.out.println("Bangladesh terrain Object Returned");
         return new BangladeshiFarmerTerrain();
     }
 }

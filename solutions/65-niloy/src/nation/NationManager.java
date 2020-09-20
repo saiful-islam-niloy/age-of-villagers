@@ -20,7 +20,6 @@ public class NationManager {
         return (IHouse)nation.getHouse();
     }
 
-
     public ITree getTree(){
         return (ITree) nation.getTree();
     }
