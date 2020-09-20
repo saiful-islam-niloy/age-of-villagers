@@ -7,10 +7,12 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import shape.Line;
 import shape.Point;
+import state.CurrentState;
 
 public class EgyptianKingsHouse implements IHouse {
     private Canvas canvas;
     private GraphicsContext graphicsContext;
+    private CurrentState currentState;
     private boolean shouldBeDrawn = true;
 
     private Point one;
@@ -22,6 +24,7 @@ public class EgyptianKingsHouse implements IHouse {
     public EgyptianKingsHouse() {
         CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
         this.canvas = canvasSingleton.getCanvas();
+        currentState = CurrentState.getInstance();
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
@@ -51,7 +54,9 @@ public class EgyptianKingsHouse implements IHouse {
                     @Override
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
-                            draw(new Point((int) event.getX(), (int) event.getY()));
+                            Point selectedPoint = new Point((int) event.getX(), (int) event.getY());
+                            draw(selectedPoint);
+                            currentState.addHouse(selectedPoint);
                         }
                     }
                 });

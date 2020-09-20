@@ -29,7 +29,6 @@ public class BangladeshiFarmersHouse implements IHouse {
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
-        currentState.addHouse(selectedPoint);
         topLeft = new Point(selectedPoint.x - 8, selectedPoint.y - 2);
         bottomRight = new Point(selectedPoint.x + 8, selectedPoint.y + 8);
 
@@ -54,7 +53,9 @@ public class BangladeshiFarmersHouse implements IHouse {
                     @Override
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
-                            draw(new Point((int) event.getX(), (int) event.getY()));
+                            Point selectedPoint = new Point((int) event.getX(), (int) event.getY());
+                            draw(selectedPoint);
+                            currentState.addHouse(selectedPoint);
                         }
                     }
                 });

@@ -7,10 +7,12 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import shape.HalfCircle;
 import shape.Point;
+import state.CurrentState;
 
 public class InuitHuntersHouse implements IHouse {
     private Canvas canvas;
     private GraphicsContext graphicsContext;
+    private CurrentState currentState;
     private boolean shouldBeDrawn = true;
 
     private Point center;
@@ -20,6 +22,7 @@ public class InuitHuntersHouse implements IHouse {
     public InuitHuntersHouse() {
         CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
         this.canvas = canvasSingleton.getCanvas();
+        currentState = CurrentState.getInstance();
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
@@ -44,7 +47,9 @@ public class InuitHuntersHouse implements IHouse {
                     @Override
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
-                            draw(new Point((int) event.getX(), (int) event.getY()));
+                            Point selectedPoint = new Point((int) event.getX(), (int) event.getY());
+                            draw(selectedPoint);
+                            currentState.addHouse(selectedPoint);
                         }
                     }
                 });
