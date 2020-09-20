@@ -134,8 +134,8 @@ public class Controller {
         canvas = canvasSingleton.getCanvas();
         drawingSpace.getChildren().add(canvas);
         openLayout.setVisible(false);
-
-        VillageLoader villageLoader = new VillageLoader(inputNationNameForOpen.getValue());
+        nationManager = new NationManager(inputNationNameForOpen.getValue());
+        VillageLoader villageLoader = new VillageLoader(nationManager);
         villageLoader.loadTerrain();
         villageLoader.loadTree(readFile.getTreeX(), readFile.getTreeY());
         villageLoader.loadHouse(readFile.getHouseX(), readFile.getHouseY());
