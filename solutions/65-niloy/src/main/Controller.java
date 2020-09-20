@@ -174,7 +174,7 @@ public class Controller {
         if (tree.isSelected()) {
             iTree = nationManager.getTree();
             iTree.getCanvas();
-            iTree.canvasController();
+            iTree.draw();
         } else {
             iTree.releaseCanvas();
         }

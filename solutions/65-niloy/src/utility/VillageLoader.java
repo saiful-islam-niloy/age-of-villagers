@@ -20,7 +20,7 @@ public class VillageLoader {
 
     public void loadTree(JsonArray treeX, JsonArray treeY){
         for (int i = 0; i< treeX.size(); i++)
-            nationManager.getTree().draw(new Point(treeX.get(i).getAsInt(), treeY.get(i).getAsInt()));
+            nationManager.getTree().load(new Point(treeX.get(i).getAsInt(), treeY.get(i).getAsInt()));
     }
 
     public void loadHouse(JsonArray houseX, JsonArray houseY){

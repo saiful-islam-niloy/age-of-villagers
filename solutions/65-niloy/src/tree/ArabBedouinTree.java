@@ -43,7 +43,7 @@ public class ArabBedouinTree implements ITree{
     }
 
     @Override
-    public void draw(Point point) {
+    public void load(Point point) {
         calculateCornerPoints(point);
         new Rectangle(topLeft, bottomRight).draw();
 
@@ -55,7 +55,7 @@ public class ArabBedouinTree implements ITree{
     }
 
     @Override
-    public void canvasController() {
+    public void draw() {
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -65,7 +65,7 @@ public class ArabBedouinTree implements ITree{
                     public void handle(MouseEvent event) {
                         if(shouldBeDrawn){
                             Point selectedPoint = new Point((int) event.getX(), (int) event.getY()) ;
-                            draw(selectedPoint);
+                            load(selectedPoint);
                             currentState.addTree(selectedPoint);
                         }
                     }
