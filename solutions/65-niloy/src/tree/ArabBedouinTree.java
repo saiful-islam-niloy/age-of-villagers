@@ -44,13 +44,13 @@ public class ArabBedouinTree implements ITree{
         if (shouldBeDrawn) {
             calculateCornerPoints(point);
 
-            new Rectangle(topLeft, bottomRight, graphicsContext).draw();
+            new Rectangle(topLeft, bottomRight).draw();
 
-            new Line(topLeft, one, graphicsContext).draw();
-            new Line(topLeft, two, graphicsContext).draw();
-            new Line(topLeft, three, graphicsContext).draw();
-            new Line(topLeft, four, graphicsContext).draw();
-            new Line(topLeft, five, graphicsContext).draw();
+            new Line(topLeft, one).draw();
+            new Line(topLeft, two).draw();
+            new Line(topLeft, three).draw();
+            new Line(topLeft, four).draw();
+            new Line(topLeft, five).draw();
 
         }
     }
