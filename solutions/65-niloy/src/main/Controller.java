@@ -15,7 +15,7 @@ import state.CurrentState;
 import terrain.ITerrain;
 import tree.ITree;
 import utility.FileReader;
-import utility.SaveFile;
+import utility.FileSaver;
 import utility.VillageLoader;
 
 import java.io.File;
@@ -153,8 +153,8 @@ public class Controller {
 
 
         if (file != null) {
-            SaveFile saveFile = new SaveFile(file);
-            saveFile.saveFile();
+            FileSaver fileSaver = new FileSaver(file);
+            fileSaver.saveFile();
         }
     }
 

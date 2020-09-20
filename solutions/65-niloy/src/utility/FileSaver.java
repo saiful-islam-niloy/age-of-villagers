@@ -6,11 +6,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class SaveFile {
+public class FileSaver {
     private File file;
     private CurrentState currentState;
 
-    public SaveFile(File file) {
+    public FileSaver(File file) {
         this.file = file;
         currentState = CurrentState.getInstance();
     }
