@@ -186,7 +186,7 @@ public class Controller {
         if (waterSource.isSelected()) {
             iWaterSource = nationManager.getWaterSource();
             iWaterSource.getCanvas();
-            iWaterSource.canvasController();
+            iWaterSource.draw();
         } else {
             iWaterSource.releaseCanvas();
         }

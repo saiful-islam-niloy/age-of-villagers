@@ -4,12 +4,12 @@ import shape.Point;
 
 public class NullRiver implements IWaterSource {
     @Override
-    public void draw(Point point) {
+    public void load(Point point) {
         System.out.println("No river exists!");
     }
 
     @Override
-    public void canvasController() {
+    public void draw() {
 
     }
 
