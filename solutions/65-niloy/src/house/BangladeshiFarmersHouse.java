@@ -48,8 +48,8 @@ public class BangladeshiFarmersHouse implements IHouse {
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            new Triangle(one, topLeft, two, graphicsContext).draw();
-                            new Rectangle(topLeft, bottomRight, graphicsContext).draw();
+                            new Triangle(one, topLeft, two).draw();
+                            new Rectangle(topLeft, bottomRight).draw();
                         }
                     }
                 });

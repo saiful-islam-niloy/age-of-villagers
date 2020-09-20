@@ -38,8 +38,8 @@ public class InuitHuntersHouse implements IHouse {
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            new HalfCircle(center2, 8, graphicsContext).draw();
-                            new HalfCircle(center, 24, graphicsContext).draw();
+                            new HalfCircle(center2, 8).draw();
+                            new HalfCircle(center, 24).draw();
                         }
                     }
                 });

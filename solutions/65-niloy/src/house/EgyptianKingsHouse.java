@@ -42,11 +42,11 @@ public class EgyptianKingsHouse implements IHouse {
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            new Line(one, two, graphicsContext).draw();
-                            new Line(one, three, graphicsContext).draw();
-                            new Line(one, four, graphicsContext).draw();
-                            new Line(two, three, graphicsContext).draw();
-                            new Line(three, four, graphicsContext).draw();
+                            new Line(one, two).draw();
+                            new Line(one, three).draw();
+                            new Line(one, four).draw();
+                            new Line(two, three).draw();
+                            new Line(three, four).draw();
                         }
                     }
                 });

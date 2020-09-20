@@ -44,12 +44,12 @@ public class ArabBedouinHouse implements IHouse{
                         if (shouldBeDrawn) {
                             calculateCornerPoints(new Point((int) event.getX(), (int) event.getY()));
 
-                            new Line(one, two, graphicsContext).draw();
-                            new Line(two, three, graphicsContext).draw();
-                            new Line(three, four, graphicsContext).draw();
-                            new Line(four, five, graphicsContext).draw();
-                            new Line(five, one, graphicsContext).draw();
-                            new Line(five, two, graphicsContext).draw();
+                            new Line(one, two).draw();
+                            new Line(two, three).draw();
+                            new Line(three, four).draw();
+                            new Line(four, five).draw();
+                            new Line(five, one).draw();
+                            new Line(five, two).draw();
                         }
                     }
                 });
