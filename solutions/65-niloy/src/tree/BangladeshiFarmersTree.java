@@ -41,8 +41,8 @@ public class BangladeshiFarmersTree implements ITree {
     public void draw(Point point) {
         System.out.println(point.x);
         calculateCornerPoints(point);
-        new Rectangle(topLeft, bottomRight, graphicsContext).draw();
-        new Circle(center, 16, graphicsContext).draw();
+        new Rectangle(topLeft, bottomRight).draw();
+        new Circle(center, 16).draw();
     }
 
     @Override

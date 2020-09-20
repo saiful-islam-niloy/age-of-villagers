@@ -47,16 +47,16 @@ public class EgyptianKingsTree implements ITree{
     public void draw(Point point) {
         calculateCornerPoints(point);
 
-        new Line(one, two, graphicsContext).draw();
-        new Line(one, three, graphicsContext).draw();
+        new Line(one, two).draw();
+        new Line(one, three).draw();
 
-        new Line(two, four, graphicsContext).draw();
-        new Line(two, five, graphicsContext).draw();
-        new Line(two, six, graphicsContext).draw();
+        new Line(two, four).draw();
+        new Line(two, five).draw();
+        new Line(two, six).draw();
 
-        new Line(three, seven, graphicsContext).draw();
-        new Line(three, eight, graphicsContext).draw();
-        new Line(three, nine, graphicsContext).draw();
+        new Line(three, seven).draw();
+        new Line(three, eight).draw();
+        new Line(three, nine).draw();
     }
 
     @Override
