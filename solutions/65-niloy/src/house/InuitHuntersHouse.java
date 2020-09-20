@@ -31,14 +31,14 @@ public class InuitHuntersHouse implements IHouse {
     }
 
     @Override
-    public void draw(Point point) {
+    public void load(Point point) {
         calculateCornerPoints(point);
         new HalfCircle(center2, 8).draw();
         new HalfCircle(center, 24).draw();
     }
 
     @Override
-    public void canvasController() {
+    public void draw() {
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -48,7 +48,7 @@ public class InuitHuntersHouse implements IHouse {
                     public void handle(MouseEvent event) {
                         if (shouldBeDrawn) {
                             Point selectedPoint = new Point((int) event.getX(), (int) event.getY());
-                            draw(selectedPoint);
+                            load(selectedPoint);
                             currentState.addHouse(selectedPoint);
                         }
                     }

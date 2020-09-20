@@ -163,7 +163,7 @@ public class Controller {
         if (house.isSelected()) {
             iHouse = nationManager.getHouse();
             iHouse.getCanvas();
-            iHouse.canvasController();
+            iHouse.draw();
         } else {
             iHouse.releaseCanvas();
         }
