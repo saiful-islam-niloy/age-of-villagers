@@ -16,6 +16,7 @@ import terrain.ITerrain;
 import tree.ITree;
 import utility.ReadFile;
 import utility.SaveFile;
+import utility.VillageLoader;
 
 import java.io.File;
 
@@ -82,6 +83,8 @@ public class Controller {
     private IWaterSource iWaterSource;
     private ITerrain iTerrain;
 
+    private ReadFile readFile;
+
 
     @FXML
     void createVillage(ActionEvent event) {
@@ -117,11 +120,24 @@ public class Controller {
         fileChooser.getExtensionFilters().add(extFilter);
 
         File file = fileChooser.showOpenDialog(null);
-        ReadFile readFile = new ReadFile(file);
+        readFile = new ReadFile(file);
         villageName.setText(readFile.getVillageName());
 
         inputNationNameForOpen.setItems(FXCollections.observableArrayList(nation));
         openLayout.setVisible(true);
+
+    }
+
+    @FXML
+    void loadVillage(ActionEvent event) {
+        CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
+        canvas = canvasSingleton.getCanvas();
+        drawingSpace.getChildren().add(canvas);
+        openLayout.setVisible(false);
+
+        VillageLoader villageLoader = new VillageLoader(inputNationNameForOpen.getValue());
+        villageLoader.loadTerrain();
+        villageLoader.loadTree(readFile.getTreeX(), readFile.getTreeY());
     }
 
     @FXML
@@ -156,7 +172,7 @@ public class Controller {
         if (tree.isSelected()) {
             iTree = nationManager.getTree();
             iTree.getCanvas();
-            iTree.draw();
+            iTree.canvasController();
         } else {
             iTree.releaseCanvas();
         }

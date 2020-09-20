@@ -45,21 +45,18 @@ public class EgyptianKingsTree implements ITree{
 
     @Override
     public void draw(Point point) {
-        if (shouldBeDrawn) {
-            calculateCornerPoints(point);
+        calculateCornerPoints(point);
 
-            new Line(one, two, graphicsContext).draw();
-            new Line(one, three, graphicsContext).draw();
+        new Line(one, two, graphicsContext).draw();
+        new Line(one, three, graphicsContext).draw();
 
-            new Line(two, four, graphicsContext).draw();
-            new Line(two, five, graphicsContext).draw();
-            new Line(two, six, graphicsContext).draw();
+        new Line(two, four, graphicsContext).draw();
+        new Line(two, five, graphicsContext).draw();
+        new Line(two, six, graphicsContext).draw();
 
-            new Line(three, seven, graphicsContext).draw();
-            new Line(three, eight, graphicsContext).draw();
-            new Line(three, nine, graphicsContext).draw();
-
-        }
+        new Line(three, seven, graphicsContext).draw();
+        new Line(three, eight, graphicsContext).draw();
+        new Line(three, nine, graphicsContext).draw();
     }
 
     @Override
@@ -71,7 +68,9 @@ public class EgyptianKingsTree implements ITree{
 
                     @Override
                     public void handle(MouseEvent event) {
-                        draw(new Point((int) event.getX(), (int) event.getY()));
+                        if (shouldBeDrawn) {
+                            draw(new Point((int) event.getX(), (int) event.getY()));
+                        }
                     }
                 });
     }

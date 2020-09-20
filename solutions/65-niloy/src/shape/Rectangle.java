@@ -1,5 +1,6 @@
 package shape;
 
+import canvas.CanvasSingleton;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Rectangle implements IShape{

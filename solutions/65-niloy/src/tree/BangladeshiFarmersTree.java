@@ -31,7 +31,6 @@ public class BangladeshiFarmersTree implements ITree {
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
-        currentState.addTree(selectedPoint);
         center = new Point(selectedPoint.x - 8, selectedPoint.y - 12);
 
         topLeft = new Point(selectedPoint.x + 2, selectedPoint.y - 4);
@@ -40,11 +39,10 @@ public class BangladeshiFarmersTree implements ITree {
 
     @Override
     public void draw(Point point) {
-        if (shouldBeDrawn) {
-            calculateCornerPoints(point);
-            new Rectangle(topLeft, bottomRight, graphicsContext).draw();
-            new Circle(center, 16, graphicsContext).draw();
-        }
+        System.out.println(point.x);
+        calculateCornerPoints(point);
+        new Rectangle(topLeft, bottomRight, graphicsContext).draw();
+        new Circle(center, 16, graphicsContext).draw();
     }
 
     @Override
@@ -56,7 +54,11 @@ public class BangladeshiFarmersTree implements ITree {
 
                     @Override
                     public void handle(MouseEvent event) {
-                        draw(new Point((int) event.getX(), (int) event.getY()));
+                        if (shouldBeDrawn) {
+                            Point selectedPoint = new Point((int) event.getX(), (int) event.getY());
+                            draw(selectedPoint);
+                            currentState.addTree(selectedPoint);
+                        }
                     }
                 });
     }

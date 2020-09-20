@@ -1,5 +1,7 @@
 package shape;
 
+import canvas.CanvasSingleton;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Line implements IShape {
@@ -15,6 +17,9 @@ public class Line implements IShape {
 
     @Override
     public void draw() {
-        graphicsContext.strokeLine(point1.x, point1.y, point2.x, point2.y);
+        System.out.println("Line");
+        CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
+        GraphicsContext graphicsContext2 = canvasSingleton.getCanvas().getGraphicsContext2D();
+        graphicsContext2.strokeLine(point1.x, point1.y, point2.x, point2.y);
     }
 }
