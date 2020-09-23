@@ -37,14 +37,15 @@ public class BangladeshiFarmersHouse implements IHouse {
     }
 
     @Override
-    public void load(Point point) {
+    public boolean load(Point point) {
         calculateCornerPoints(point);
         new Triangle(one, topLeft, two).draw();
         new Rectangle(topLeft, bottomRight).draw();
+        return true;
     }
 
     @Override
-    public void draw() {
+    public boolean draw() {
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -59,6 +60,7 @@ public class BangladeshiFarmersHouse implements IHouse {
                         }
                     }
                 });
+        return shouldBeDrawn;
     }
 
     @Override

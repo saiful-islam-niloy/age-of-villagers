@@ -43,7 +43,7 @@ public class ArabBedouinHouse implements IHouse{
     }
 
     @Override
-    public void load(Point point) {
+    public boolean load(Point point) {
         calculateCornerPoints(point);
         shapes.clear();
         shapes.add(new Line(one, two));
@@ -55,10 +55,11 @@ public class ArabBedouinHouse implements IHouse{
 
         for (int i = 0; i< shapes.size(); i++)
             shapes.get(i).draw();
+        return true;
     }
 
     @Override
-    public void draw() {
+    public boolean draw() {
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -73,6 +74,7 @@ public class ArabBedouinHouse implements IHouse{
                         }
                     }
                 });
+        return shouldBeDrawn;
     }
 
 

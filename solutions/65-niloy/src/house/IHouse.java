@@ -3,9 +3,9 @@ package house;
 import shape.Point;
 
 public interface IHouse {
-    void load(Point point);
+    boolean load(Point point);
 
-    void draw();
+    boolean draw();
 
     void releaseCanvas();
 

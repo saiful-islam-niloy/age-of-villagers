@@ -35,17 +35,18 @@ public class EgyptianKingsHouse implements IHouse {
     }
 
     @Override
-    public void load(Point point) {
+    public boolean load(Point point) {
         calculateCornerPoints(point);
         new Line(one, two).draw();
         new Line(one, three).draw();
         new Line(one, four).draw();
         new Line(two, three).draw();
         new Line(three, four).draw();
+        return true;
     }
 
     @Override
-    public void draw() {
+    public boolean draw() {
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -60,6 +61,7 @@ public class EgyptianKingsHouse implements IHouse {
                         }
                     }
                 });
+        return shouldBeDrawn;
     }
 
     @Override
