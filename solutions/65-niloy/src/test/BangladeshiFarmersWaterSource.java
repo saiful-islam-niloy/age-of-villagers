@@ -9,7 +9,9 @@ public class BangladeshiFarmersWaterSource {
     @Test
     public void waterResourceDraw(){
         river.BangladeshiFarmersWaterSource river = new river.BangladeshiFarmersWaterSource();
+        river.getCanvas();
         assertEquals(true, river.draw());
+        river.releaseCanvas();
     }
 
     @Test
