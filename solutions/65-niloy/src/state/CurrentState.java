@@ -44,7 +44,6 @@ public class CurrentState {
     }
 
     public void addTree(Point point){
-        System.out.println("x: "+point.x+" y: "+point.y+" added");
         tree.add(point);
     }
 
@@ -85,8 +84,7 @@ public class CurrentState {
         state.add("waterResourceX", waterX);
         state.add("waterResourceY", waterY);
     }
-
-
+    
     public JsonObject getCurrentStateObject(){
         addHouseData();
         addTreeData();

@@ -45,6 +45,7 @@ public class FileReader {
     public JsonArray getHouseY(){
         return jsonObject.getAsJsonArray("houseY");
     }
+
     public JsonArray getWaterResourceX(){
         return jsonObject.getAsJsonArray("waterResourceX");
     }
