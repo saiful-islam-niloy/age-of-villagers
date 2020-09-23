@@ -5,9 +5,12 @@ import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
+import shape.IShape;
 import shape.Line;
 import shape.Point;
 import state.CurrentState;
+
+import java.util.ArrayList;
 
 public class ArabBedouinHouse implements IHouse{
     private Canvas canvas;
@@ -21,11 +24,14 @@ public class ArabBedouinHouse implements IHouse{
     private Point four;
     private Point five;
 
+    private ArrayList<IShape> shapes;
+
 
     public ArabBedouinHouse() {
         CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
         this.canvas = canvasSingleton.getCanvas();
         currentState = CurrentState.getInstance();
+        shapes = new ArrayList<>();
     }
 
     private void calculateCornerPoints(Point selectedPoint) {
@@ -39,12 +45,16 @@ public class ArabBedouinHouse implements IHouse{
     @Override
     public void load(Point point) {
         calculateCornerPoints(point);
-        new Line(one, two).draw();
-        new Line(two, three).draw();
-        new Line(three, four).draw();
-        new Line(four, five).draw();
-        new Line(five, one).draw();
-        new Line(five, two).draw();
+        shapes.clear();
+        shapes.add(new Line(one, two));
+        shapes.add(new Line(two, three));
+        shapes.add(new Line(three, four));
+        shapes.add(new Line(four, five));
+        shapes.add(new Line(five, one));
+        shapes.add(new Line(five, two));
+
+        for (int i = 0; i< shapes.size(); i++)
+            shapes.get(i).draw();
     }
 
     @Override
