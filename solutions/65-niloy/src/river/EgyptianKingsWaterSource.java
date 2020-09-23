@@ -29,13 +29,14 @@ public class EgyptianKingsWaterSource implements IWaterSource {
     }
 
     @Override
-    public void load(Point point) {
+    public boolean load(Point point) {
         calculateCornerPoints(point);
         new Circle(center, 12).draw();
+        return true;
     }
 
     @Override
-    public void draw() {
+    public boolean draw() {
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -50,6 +51,7 @@ public class EgyptianKingsWaterSource implements IWaterSource {
                         }
                     }
                 });
+        return shouldBeDrawn;
     }
 
     @Override

@@ -3,8 +3,8 @@ package river;
 import shape.Point;
 
 public interface IWaterSource {
-    void load(Point point);
-    void draw();
+    boolean load(Point point);
+    boolean draw();
     void releaseCanvas();
     void getCanvas();
 }

@@ -46,7 +46,7 @@ public class BangladeshiFarmersWaterSource implements IWaterSource{
 
 
     @Override
-    public void load(Point point) {
+    public boolean load(Point point) {
         calculateCornerPoints(point);
         new Line(one, two).draw();
         new Line(two, three).draw();
@@ -57,9 +57,10 @@ public class BangladeshiFarmersWaterSource implements IWaterSource{
         new Line(seven, eight).draw();
         new Line(eight, nine).draw();
         new Line(nine, one).draw();
+        return  true;
     }
     @Override
-    public void draw() {
+    public boolean draw() {
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -74,6 +75,7 @@ public class BangladeshiFarmersWaterSource implements IWaterSource{
                         }
                     }
                 });
+        return shouldBeDrawn;
     }
 
     @Override
