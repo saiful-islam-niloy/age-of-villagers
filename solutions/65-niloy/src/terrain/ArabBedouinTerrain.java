@@ -7,11 +7,12 @@ import javafx.scene.paint.Color;
 public class ArabBedouinTerrain implements ITerrain{
     private String colorCode;
     @Override
-    public void draw() {
+    public String draw() {
         CanvasSingleton canvasSingleton = CanvasSingleton.getInstance();
         GraphicsContext graphicsContext = canvasSingleton.getCanvas().getGraphicsContext2D();
         colorCode = "#d9f5a6";
         graphicsContext.setFill(Color.web(colorCode));
         graphicsContext.fillRect(0,0,600,400);
+        return colorCode;
     }
 }
