@@ -5,7 +5,6 @@ import shape.Point;
 public class NullRiver implements IWaterSource {
     @Override
     public boolean load(Point point) {
-        System.out.println("No river exists!");
         return true;
     }
 

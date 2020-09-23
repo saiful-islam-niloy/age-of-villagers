@@ -39,7 +39,6 @@ public class BangladeshiFarmersTree implements ITree {
 
     @Override
     public boolean load(Point point) {
-        System.out.println(point.x);
         calculateCornerPoints(point);
         new Rectangle(topLeft, bottomRight).draw();
         new Circle(center, 16).draw();
