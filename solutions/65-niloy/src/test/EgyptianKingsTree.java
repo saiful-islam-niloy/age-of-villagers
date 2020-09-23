@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EgyptianKingsTree {
     @Test
-    public void houseDraw(){
+    public void treeDraw(){
         tree.EgyptianKingsTree tree = new tree.EgyptianKingsTree();
         tree.getCanvas();
         assertEquals(true, tree.draw());
@@ -15,7 +15,7 @@ public class EgyptianKingsTree {
     }
 
     @Test
-    public void houseLoadOnCanvas(){
+    public void treeLoadOnCanvas(){
         tree.EgyptianKingsTree tree = new tree.EgyptianKingsTree();
         tree.getCanvas();
         assertEquals(true, tree.load(new Point(12,12)));

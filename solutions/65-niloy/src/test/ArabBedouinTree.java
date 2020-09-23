@@ -5,10 +5,10 @@ import shape.Point;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BangladeshiFarmersTree {
+public class ArabBedouinTree {
     @Test
     public void treeDraw(){
-        tree.BangladeshiFarmersTree tree = new tree.BangladeshiFarmersTree();
+        tree.ArabBedouinTree tree = new tree.ArabBedouinTree();
         tree.getCanvas();
         assertEquals(true, tree.draw());
         tree.releaseCanvas();
@@ -16,7 +16,7 @@ public class BangladeshiFarmersTree {
 
     @Test
     public void treeLoadOnCanvas(){
-        tree.BangladeshiFarmersTree tree = new tree.BangladeshiFarmersTree();
+        tree.ArabBedouinTree tree = new tree.ArabBedouinTree();
         tree.getCanvas();
         assertEquals(true, tree.load(new Point(12,12)));
         tree.releaseCanvas();
