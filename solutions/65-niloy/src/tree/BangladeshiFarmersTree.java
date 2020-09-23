@@ -38,15 +38,16 @@ public class BangladeshiFarmersTree implements ITree {
     }
 
     @Override
-    public void load(Point point) {
+    public boolean load(Point point) {
         System.out.println(point.x);
         calculateCornerPoints(point);
         new Rectangle(topLeft, bottomRight).draw();
         new Circle(center, 16).draw();
+        return true;
     }
 
     @Override
-    public void draw() {
+    public boolean draw() {
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -61,6 +62,7 @@ public class BangladeshiFarmersTree implements ITree {
                         }
                     }
                 });
+        return shouldBeDrawn;
     }
 
     @Override

@@ -4,13 +4,14 @@ import shape.Point;
 
 public class NullTree implements ITree {
     @Override
-    public void load(Point point) {
+    public boolean load(Point point) {
         System.out.println("No tree exists!");
+        return true;
     }
 
     @Override
-    public void draw() {
-
+    public boolean draw() {
+        return true;
     }
 
     @Override

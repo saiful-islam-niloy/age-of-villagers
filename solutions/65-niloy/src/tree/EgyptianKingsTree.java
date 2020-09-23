@@ -47,7 +47,7 @@ public class EgyptianKingsTree implements ITree{
     }
 
     @Override
-    public void load(Point point) {
+    public boolean load(Point point) {
         calculateCornerPoints(point);
 
         new Line(one, two).draw();
@@ -60,10 +60,11 @@ public class EgyptianKingsTree implements ITree{
         new Line(three, seven).draw();
         new Line(three, eight).draw();
         new Line(three, nine).draw();
+        return true;
     }
 
     @Override
-    public void draw() {
+    public boolean draw() {
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -78,6 +79,7 @@ public class EgyptianKingsTree implements ITree{
                         }
                     }
                 });
+        return shouldBeDrawn;
     }
 
     @Override

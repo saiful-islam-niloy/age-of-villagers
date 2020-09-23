@@ -3,8 +3,8 @@ package tree;
 import shape.Point;
 
 public interface ITree {
-    void load(Point point);
-    void draw();
+    boolean load(Point point);
+    boolean draw();
     void releaseCanvas();
     void getCanvas();
 }
